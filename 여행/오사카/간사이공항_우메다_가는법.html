@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>간사이공항에서 우메다(오사카역) 가는 법 | 사진으로 보는 초상세 동선 안내서</title>
+<meta name="description" content="부모님 오사카 여행을 위한 간사이공항 입국심사부터 우메다(오사카역) 리무진버스·JR하루카·간쿠쾌속 탑승 및 숙소 이동 초상세 사진 가이드.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6f0; --card:#ffffff; --ink:#2b2622; --sub:#6f655c; --line:#ece3d7;
+  --navy:#1b4965; --navy-soft:#eaf2f8;
+  --bus:#b85d19; --bus-soft:#fdf1e6;
+  --jr:#005bac; --jr-soft:#e8f2fc;
+  --rapid:#2b7a58; --rapid-soft:#e8f5ee;
+  --good:#2f7d5b; --good-soft:#e8f5ee;
+  --bad:#b5532c; --bad-soft:#fcefe8;
+  --yt:#c4302b; --yt-soft:#fdecec;
+  --shadow:0 10px 30px rgba(80,55,30,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:19px;line-height:1.75;word-break:keep-all}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#183446 0%,#1b4965 55%,#3d7ea6 100%);color:#fff;padding:60px 0 88px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,225,170,.28),transparent 70%)}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:4px 14px;border-radius:99px;font-size:15px;letter-spacing:.05em}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:40px;line-height:1.32;margin:16px 0 12px}
+.hero p{font-size:19px;opacity:.92;margin:0}
+.jump{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.jump a{text-decoration:none;background:#fff;color:var(--ink);padding:11px 18px;border-radius:14px;font-weight:700;font-size:16.5px;box-shadow:var(--shadow);transition:transform .2s}
+.jump a:hover{transform:translateY(-3px)}
+.jump .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+section{margin:-50px auto 40px;position:relative;z-index:2}
+.panel{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:34px}
+h2{font-family:'Noto Serif KR',serif;font-size:30px;margin:0 0 6px}
+.lead{color:var(--sub);margin:0 0 22px;font-size:17px}
+
+/* Compare table */
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:17.5px}
+th,td{padding:13px 11px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{font-size:18.5px;border-bottom:3px solid var(--line)}
+thead th.b{color:var(--bus)} thead th.j{color:var(--jr)} thead th.r{color:var(--rapid)}
+tbody th{color:var(--sub);font-weight:700;width:18%;white-space:nowrap}
+.win{background:var(--good-soft);border-radius:8px;padding:1px 8px;font-weight:700;color:var(--good)}
+.warn{background:var(--bad-soft);border-radius:8px;padding:1px 8px;font-weight:700;color:var(--bad)}
+.info-badge{background:var(--jr-soft);border-radius:8px;padding:1px 8px;font-weight:700;color:var(--jr)}
+
+/* Recommendation boxes */
+.rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.rec-box{border-radius:18px;padding:20px 22px;border:2px solid var(--line)}
+.rec-box.b{background:var(--bus-soft);border-color:#f0cfb0}
+.rec-box.j{background:var(--jr-soft);border-color:#bfd9f2}
+.rec-box h3{margin:0 0 8px;font-size:20px}
+.rec-box.b h3{color:var(--bus)}
+.rec-box.j h3{color:var(--jr)}
+.rec-box ul{margin:0;padding-left:20px;font-size:17.5px}
+
+/* Section Headers */
+.sec-wrap{margin:52px auto 24px}
+.sec-head{border-radius:24px;padding:28px 34px;color:#fff;box-shadow:var(--shadow)}
+.sec-head.arr{background:linear-gradient(135deg,#1d3557,#2a5c8a 60%,#457b9d)}
+.sec-head.bus{background:linear-gradient(135deg,#7f3908,#b85d19 60%,#d97f38)}
+.sec-head.jr{background:linear-gradient(135deg,#00356b,#005bac 60%,#2b80cc)}
+.sec-head.rapid{background:linear-gradient(135deg,#1b4d37,#2b7a58 60%,#459c76)}
+.sec-head.hotel{background:linear-gradient(135deg,#3a2b20,#6b4b2e 60%,#9e6f3c)}
+.sec-head.yt{background:linear-gradient(135deg,#6e1414,#b32424 60%,#d94141)}
+.sec-head .num{font-size:15px;opacity:.9;letter-spacing:.08em;font-weight:700}
+.sec-head h2{color:#fff;font-size:31px;margin:4px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.32);border-radius:99px;padding:3px 14px;font-size:15px}
+
+/* Step cards */
+.step-card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);margin:20px 0;overflow:hidden;border:1px solid var(--line)}
+.step-top{padding:22px 28px 10px;display:flex;gap:16px;align-items:flex-start}
+.step-badge{flex:none;min-width:48px;height:48px;padding:0 12px;border-radius:14px;color:#fff;display:grid;place-items:center;font-weight:900;font-size:19px}
+.arr .step-badge{background:var(--navy)}
+.bus .step-badge{background:var(--bus)}
+.jr .step-badge{background:var(--jr)}
+.rapid .step-badge{background:var(--rapid)}
+.hotel .step-badge{background:#6b4b2e}
+.step-top h3{margin:0;font-size:22px;line-height:1.4}
+.step-sub{color:var(--sub);font-size:15.5px;margin-top:3px}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:10px 28px}
+.photos figure{margin:0;background:#f7f3ed;border-radius:14px;padding:8px;border:1px solid var(--line)}
+.photos img{width:100%;height:225px;object-fit:cover;border-radius:10px;display:block;background:#eee}
+.photos img.contain{object-fit:contain;background:#fff}
+.photos figcaption{font-size:14.5px;color:var(--sub);text-align:center;margin-top:6px;font-weight:500}
+.step-body{padding:8px 28px 24px}
+.step-body ul{margin:6px 0;padding-left:22px}
+.step-body li{margin-bottom:6px}
+.callout{margin:14px 0 4px;padding:14px 18px;border-left:5px solid;border-radius:10px;font-size:17.5px}
+.arr .callout{border-color:var(--navy);background:var(--navy-soft)}
+.bus .callout{border-color:var(--bus);background:var(--bus-soft)}
+.jr .callout{border-color:var(--jr);background:var(--jr-soft)}
+.rapid .callout{border-color:var(--rapid);background:var(--rapid-soft)}
+.hotel .callout{border-color:#8a6a3b;background:#f6efe3}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.mini-box{border-radius:14px;padding:14px 18px;font-size:17px;border:1px solid var(--line)}
+.mini-box.g{background:var(--good-soft);border-color:#c5e4d4}
+.mini-box.w{background:var(--bad-soft);border-color:#f3cdb8}
+.mini-box.b{background:var(--jr-soft);border-color:#c2dcf5}
+.mini-box b.title{display:block;font-size:18px;margin-bottom:4px}
+
+.note{background:#fff8e6;border:1px solid #f1dfae;border-radius:16px;padding:16px 20px;font-size:16.5px;color:#5c4b20;margin-top:18px}
+
+/* YouTube Grid */
+.yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.yt-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.yt-thumb{position:relative;background:#000}
+.yt-thumb img{width:100%;height:195px;object-fit:cover;display:block;opacity:.92}
+.yt-time{position:absolute;right:12px;bottom:10px;background:rgba(0,0,0,.8);color:#fff;font-size:13.5px;font-weight:700;padding:2px 9px;border-radius:6px}
+.yt-tag{position:absolute;left:12px;top:12px;background:var(--yt);color:#fff;font-size:13.5px;font-weight:700;padding:3px 10px;border-radius:99px}
+.yt-info{padding:18px 22px 12px}
+.yt-info h3{margin:0 0 6px;font-size:19.5px;line-height:1.4}
+.yt-meta{font-size:14.5px;color:var(--sub);margin-bottom:8px}
+.yt-desc{font-size:16px;color:var(--ink);margin:0;padding-left:18px}
+.yt-desc li{margin-bottom:3px}
+.yt-foot{padding:0 22px 20px}
+.link{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:10px 18px;border-radius:12px;color:#fff;background:var(--navy);transition:opacity .2s;text-align:center}
+.link:hover{opacity:.88}
+.link.yt-btn{background:var(--yt);width:100%}
+.link.bus-btn{background:var(--bus)}
+.link.jr-btn{background:var(--jr)}
+
+footer{color:var(--sub);font-size:14px;text-align:center;padding:30px 0 50px}
+
+@media (max-width:720px){
+  body{font-size:18px}
+  .hero h1{font-size:31px}
+  .rec-grid,.two-col,.yt-grid{grid-template-columns:1fr}
+  .panel{padding:22px}
+  table{font-size:15px} tbody th{white-space:normal;width:22%} th,td{padding:10px 6px}
+  .photos img{height:210px}
+}
+
+@media print{
+  @page{size:A4;margin:8mm 10mm}
+  body{font-size:12px;line-height:1.42;background:#fff}
+  .wrap{max-width:100%;padding:0}
+  .hero{padding:14px 22px 16px;border-radius:14px;margin-bottom:8px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hero .tag{font-size:11px;padding:2px 10px}
+  .hero h1{font-size:22px;margin:6px 0 4px;line-height:1.25}
+  .hero h1 br{display:none}
+  .hero p{font-size:12.5px}
+  .jump{display:none}
+  section{margin:0 auto 8px}
+  .panel,.sec-head,.step-card,.rec-box,.mini-box,.callout,.note,.win,.warn,.info-badge,.yt-card,.photos figure{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .panel,.step-card,.sec-head,.yt-card{box-shadow:none}
+  .panel{padding:14px 18px;border:1px solid var(--line);border-radius:14px;break-inside:avoid}
+  h2{font-size:18.5px;margin:0 0 3px}
+  .lead{font-size:12px;margin:0 0 8px}
+  table{font-size:11.5px}
+  thead th{font-size:12.5px}
+  th,td{padding:5.5px 6px}
+  .rec-grid{gap:10px;margin-top:10px}
+  .rec-box{padding:10px 13px;border-radius:12px;break-inside:avoid}
+  .rec-box h3{font-size:14px;margin:0 0 3px}
+  .rec-box ul{font-size:11.5px;padding-left:16px}
+
+  .sec-wrap{break-before:page;margin:0 auto 8px}
+  .sec-head{padding:12px 18px;border-radius:14px;break-inside:avoid;break-after:avoid;margin-bottom:8px}
+  .sec-head .num{font-size:11px}
+  .sec-head h2{font-size:19px;margin:2px 0 5px}
+  .chip{font-size:11px;padding:1px 9px}
+
+  .step-card{break-inside:avoid;border:1px solid var(--line);border-radius:13px;margin:7px 0}
+  .step-top{padding:9px 14px 3px;gap:9px}
+  .step-badge{min-width:30px;height:30px;border-radius:8px;font-size:13px;padding:0 7px}
+  .step-top h3{font-size:14.5px;line-height:1.28}
+  .step-sub{font-size:11.5px;margin-top:1px}
+  .photos{padding:5px 14px;gap:7px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .photos figure{padding:4px;border-radius:8px}
+  .photos img{height:106px;border-radius:6px}
+  .photos figcaption{font-size:10.5px;margin-top:2px}
+  .step-body{padding:3px 14px 9px;font-size:11.8px}
+  .step-body ul{margin:4px 0;padding-left:18px}
+  .step-body li{margin-bottom:2px}
+  .callout{margin:5px 0 1px;padding:6px 10px;font-size:11.5px;border-radius:7px}
+  .two-col{gap:8px;margin-top:5px}
+  .mini-box{padding:7px 10px;font-size:11.2px;border-radius:8px}
+  .mini-box b.title{font-size:12px;margin-bottom:2px}
+  .note{padding:8px 12px;font-size:11.2px;margin-top:7px;break-inside:avoid}
+
+  .yt-grid{gap:8px;margin-top:7px}
+  .yt-card{break-inside:avoid;border-radius:11px}
+  .yt-thumb img{height:82px}
+  .yt-tag{font-size:10.5px;padding:2px 7px;top:7px;left:7px}
+  .yt-time{font-size:10.5px;padding:1px 6px;bottom:6px;right:7px}
+  .yt-info{padding:7px 11px 4px}
+  .yt-info h3{font-size:12.5px;margin:0 0 2px;line-height:1.28}
+  .yt-meta{font-size:10.5px;margin-bottom:3px}
+  .yt-desc{font-size:11px;padding-left:15px}
+  .yt-desc li{margin-bottom:1px}
+  .yt-foot{padding:0 11px 7px}
+  .link{font-size:10.8px;padding:4px 8px;border-radius:6px}
+  footer{padding:6px 0 0;font-size:10.5px;break-before:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">부모님 오사카 여행 · 공항→우메다 동선 안내서</span>
+    <h1>간사이공항에서 우메다(오사카역) <br>찾아가는 법 완벽 가이드</h1>
+    <p>비행기에서 내리는 순간부터 입국심사, 리무진버스·JR하루카 탑승, 우메다 숙소 도착까지 현장 사진으로 한 걸음씩 정리했습니다.</p>
+    <nav class="jump">
+      <a href="#compare">📊 3가지 방법 한눈에 비교</a>
+      <a href="#arrival"><span class="dot" style="background:#1b4965"></span>0단계: 비행기 하차~입국심사</a>
+      <a href="#bus"><span class="dot" style="background:#b85d19"></span>방법 1: 공항 리무진버스(추천)</a>
+      <a href="#haruka"><span class="dot" style="background:#005bac"></span>방법 2: JR 특급 하루카</a>
+      <a href="#rapid"><span class="dot" style="background:#2b7a58"></span>방법 3: JR 간쿠쾌속</a>
+      <a href="#hotel">🏨 이비스 오사카 우메다 찾아가는 법</a>
+      <a href="#youtube"><span class="dot" style="background:#c4302b"></span>📺 참고 유튜브 영상 6선</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ===================== 한눈에 비교 ===================== -->
+<section class="wrap" id="compare">
+  <div class="panel">
+    <h2>한눈에 비교: 간사이공항 ➔ 우메다(오사카역) 3가지 이동법</h2>
+    <p class="lead">우메다(오사카역)까지는 환승 없이 한 번에 가는 교통편이 3가지 있습니다. 부모님 체력과 짐 무게에 맞춰 골라보세요.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th class="b">🚌 방법 1. 공항 리무진버스<br><span class="win" style="font-size:14px">부모님 추천 1순위</span></th>
+          <th class="j">🚅 방법 2. JR 특급 하루카<br><span class="info-badge" style="font-size:14px">빠르고 정확한 2순위</span></th>
+          <th class="r">🚃 방법 3. JR 간쿠쾌속<br><span style="font-size:14px;color:var(--sub)">가성비 일반열차</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>제1터미널<br>타는 곳</th>
+          <td><b>1층 도착 로비 밖 『5번 승차장』</b><br>(층 이동·계단 전혀 없음)</td>
+          <td>2층 연결통로 건너 간사이공항역<br><b>『파란색 JR 개찰구』 ➔ 4번 승강장</b></td>
+          <td>2층 연결통로 건너 간사이공항역<br><b>『파란색 JR 개찰구』 ➔ 3번 승강장</b></td>
+        </tr>
+        <tr>
+          <th>제2터미널<br><small>(제주·피치항공)</small></th>
+          <td>1층 문 밖 <b>『1번 승차장』 바로 탑승</b><br><span class="win">셔틀 이동 불필요</span></td>
+          <td colspan="2">무료 셔틀버스(약 8분)로 제1터미널 옆 『에어로플라자』 이동 후<br>2층 연결통로를 건너 간사이공항역으로 이동해야 함</td>
+        </tr>
+        <tr>
+          <th>우메다<br>내리는 곳</th>
+          <td>① <b>호텔 한큐 레스파이어</b> (08:45~19:30)<br>② <b>한큐 삼번가</b> (아침·야간)<br>③ <b>하비스 오사카</b> (서우메다)</td>
+          <td><b>JR 오사카역 지하 승강장</b><br>(우메키타 지하 홈 21~24번)</td>
+          <td><b>JR 오사카역 지상 승강장</b><br>(일반 JR 개찰구와 바로 연결)</td>
+        </tr>
+        <tr>
+          <th>소요 시간</th>
+          <td><b>약 50~60분</b> (10~15분 간격 운행)<br><small style="color:var(--sub)">※ 도로 정체 시 10~20분 더 걸릴 수 있음</small></td>
+          <td><b>약 47분</b> (30분 간격 운행)<br><span class="win">시간이 가장 정확하고 빠름</span></td>
+          <td><b>약 65~70분</b> (15~20분 간격 운행)<br>중간 정차역이 많음</td>
+        </tr>
+        <tr>
+          <th>편도 요금<br><small>(성인 1인)</small></th>
+          <td><b>1,800엔</b> (왕복권 3,300엔 / 14일 유효)<br>현장 발권·클룩 QR·<b>신용카드 터치 가능</b></td>
+          <td><b>1,900엔</b> (외국인 온라인 할인권)<br><small style="color:var(--sub)">※ 2026.11 인상 반영 / 현장 정가는 약 2,900엔</small></td>
+          <td><b>1,180엔</b> <span class="win">가장 저렴</span><br>교통카드(ICOCA) 바로 태그 가능</td>
+        </tr>
+        <tr>
+          <th>캐리어(짐)<br>보관 방법</th>
+          <td><span class="win">직원이 버스 짐칸에 실어줌</span><br>(1인 2개·30kg 무료, 짐표 수령)</td>
+          <td>객차 출입문 옆 전용 보관대에<br>직접 올려두어야 함</td>
+          <td>일반 지하철처럼 좌석 앞에서<br>직접 캐리어를 잡고 가야 함</td>
+        </tr>
+        <tr>
+          <th>주의할 점</th>
+          <td>선착순 탑승 (만석 시 다음 차 탑승)<br>내릴 정류장 이름 미리 확인 필수</td>
+          <td>사전 온라인 예매(WEST QR) 필수<br>오사카역 지하에서 지상까지 조금 걸음</td>
+          <td><span class="warn">반드시 1~4호차(앞 4칸) 탑승!</span><br>(5~8호차는 중간에 와카야마로 분리됨)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rec-grid">
+      <div class="rec-box b">
+        <h3>👴👵 부모님께 『리무진버스』를 1순위로 권하는 이유</h3>
+        <ul>
+          <li>입국장을 나와 <b>에스컬레이터나 계단을 오르내릴 필요 없이</b> 1층 문 밖으로 나가면 바로 정류장입니다.</li>
+          <li>무거운 캐리어를 직원이 버스 밑 트렁크에 실어주어 <b>두 손 가볍게 앉아서</b> 우메다 중심부까지 갑니다.</li>
+          <li>확정 숙소인 <b>『이비스 오사카 우메다』</b>까지 버스 내리는 곳(한큐 레스파이어·한큐 삼번가)에서 평지로 걸어서 약 7~8분 거리입니다.</li>
+        </ul>
+      </div>
+      <div class="rec-box j">
+        <h3>🚅 『JR 특급 하루카』가 더 좋은 경우</h3>
+        <ul>
+          <li>금요일 저녁이나 출퇴근 시간대라 <b>도로가 막힐까 봐 걱정될 때</b> 정확히 47분 만에 오사카역에 도착합니다.</li>
+          <li>열차 내 화장실과 넓은 좌석, 무료 와이파이가 잘 갖춰져 있고 흔들림이 적어 <b>멀미가 있으신 분께 편안</b>합니다.</li>
+          <li>출국 전 스마트폰으로 <b>WEST QR 티켓</b>을 사두면 매표소 줄을 서지 않고 휴대폰 QR로 바로 개찰구를 통과합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 0단계: 입국심사 동선 ===================== -->
+<div class="wrap sec-wrap arr" id="arrival">
+  <div class="sec-head arr">
+    <div class="num">STEP 0 · 공항 도착 후 공통 동선</div>
+    <h2>비행기에서 내리자마자 ➔ 1층 도착 로비까지 (6단계)</h2>
+    <div class="chips">
+      <span class="chip">제1터미널 기준 (대한항공·아시아나·진에어·티웨이·에어부산·에어서울 등)</span>
+      <span class="chip">비짓재팬웹(Visit Japan Web) 최신 통합 키오스크 반영</span>
+    </div>
+  </div>
+
+  <!-- 0-1 -->
+  <article class="step-card arr">
+    <div class="step-top">
+      <div class="step-badge">1~2</div>
+      <div>
+        <h3>비행기 하차 후 『국제선 도착』 표지판 따라 이동 ➔ 셔틀트레인 탑승</h3>
+        <div class="step-sub">비행기에서 내리면 사람들을 따라 이동하며 한국어로 적힌 『국제선 도착』 안내판만 따라가면 됩니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_arr1_walk.jpg" alt="국제선 도착 표지판"><figcaption>① 『国際線 到着 (국제선 도착)』 표지판 따라 이동</figcaption></figure>
+      <figure><img src="images/kix_arr2_shuttle.jpg" alt="간사이공항 셔틀트레인"><figcaption>② 무인 셔틀트레인(윙셔틀)을 타고 입국장 본관으로 이동</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>표지판 확인:</b> 노란색 글씨로 <b>『国際線 到着 / International Arrivals / 국제선 도착』</b>이라고 한국어가 함께 적혀 있어 길 잃을 염려가 없습니다.</li>
+        <li><b>무인 셔틀트레인 탑승:</b> 제1터미널 탑승동에서 내리면 공항 내부 모노레일(셔틀트레인)을 한 번 탑니다. 1~2분마다 바로 오며, 약 1분 반 만에 입국심사장이 있는 본관 건물에 내려줍니다.</li>
+        <li><small style="color:var(--sub)">※ 참고: 제주항공·피치항공이 도착하는 <b>제2터미널</b>은 셔틀트레인 없이 걸어서 바로 입국심사장으로 이어집니다.</small></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 0-2 -->
+  <article class="step-card arr">
+    <div class="step-top">
+      <div class="step-badge">3</div>
+      <div>
+        <h3>통합 키오스크에서 『비짓재팬웹 QR + 여권』 스캔 후 입국심사</h3>
+        <div class="step-sub">간사이공항은 입국심사와 세관신고를 한 번에 처리하는 최신 『공동 키오스크』를 운영 중입니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_arr3_kiosk.jpg" alt="공동 키오스크 화면"><figcaption>① 키오스크 스캔 완료 후 뜨는 경로 알파벳 (예: ROUTE a)</figcaption></figure>
+      <figure><img src="images/kix_arr4_lane.jpg" alt="입국심사 a b c d 레인 안내"><figcaption>② 화면에 뜬 알파벳(a·b·c·d) 색깔 표지판을 따라 이동</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>미리 준비할 것:</b> 출국 전 등록해 둔 <b>비짓재팬웹(Visit Japan Web) QR코드 화면</b>(캡처본도 가능)과 <b>여권</b>(여권 커버는 미리 벗겨두세요)을 손에 준비합니다.</li>
+        <li><b>통합 키오스크 이용 순서 (한국어 음성·화면 지원):</b>
+          <ol style="margin:4px 0;padding-left:20px">
+            <li>기계에 <b>여권 사진면</b>과 <b>비짓재팬웹 QR코드</b>를 순서대로 스캔합니다.</li>
+            <li>양손 검지 <b>지문 등록</b> 후 카메라를 보고 <b>얼굴 사진</b>을 찍습니다.</li>
+            <li>완료되면 첫 번째 사진처럼 화면에 <b>『a / b / c / d 경로 마크를 따라 이동해 주십시오』</b>라고 알파벳이 크게 뜹니다.</li>
+          </ol>
+        </li>
+        <li><b>입국심사 통과:</b> 방금 화면에서 본 알파벳(예: 초록색 <b>a</b>, 분홍색 <b>b</b>, 주황색 <b>c</b>, 파란색 <b>d</b>) 바닥 선과 표지판을 따라 걸어가 심사관에게 여권만 보여주면 입국심사가 빠르게 끝납니다.</li>
+      </ul>
+      <div class="callout">
+        💡 <b>꿀팁:</b> 셔틀트레인에서 내리자마자 바로 앞 키오스크에 줄이 길다면, 당황하지 말고 <b>조금만 더 안쪽으로 걸어가 보세요.</b> 안쪽에도 똑같은 키오스크가 수십 대 있어서 훨씬 줄이 짧습니다!
+      </div>
+    </div>
+  </article>
+
+  <!-- 0-3 -->
+  <article class="step-card arr">
+    <div class="step-top">
+      <div class="step-badge">4~6</div>
+      <div>
+        <h3>수하물(캐리어) 찾기 ➔ 세관 전자게이트 통과 ➔ 1층 도착 로비 출구!</h3>
+        <div class="step-sub">짐을 찾은 뒤 파란색 『출구(EXIT)』 바닥 표시만 따라 나오면 입국 완료입니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_arr5_baggage.jpg" alt="수하물 수취대"><figcaption>④ 전광판에서 항공편 번호 확인 후 캐리어 수령</figcaption></figure>
+      <figure><img src="images/kix_arr6_customs.jpg" alt="세관 전자신고 안내도"><figcaption>⑤ 비짓재팬 등록자는 파란색 a·b·c·d 전자신고 구역 통과</figcaption></figure>
+      <figure><img src="images/kix_arr7_exit.jpg" alt="1층 도착 로비 출구"><figcaption>⑥ 파란색 『出口 EXIT 출구』를 지나면 1층 도착 로비!</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>Step 4. 수하물 찾기:</b> 계단/에스컬레이터로 내려와 전광판에서 타고 온 비행기 편명(예: KE723, OZ112 등)이 적힌 벨트 번호를 확인하고 캐리어를 찾습니다.</li>
+        <li><b>Step 5. 세관 통과:</b> 앞 단계 키오스크에서 이미 세관 신고까지 마쳤으므로, 종이 신고서를 쓰는 노란색 줄로 가지 마시고 <b>파란색 『전자신고 에리어 (a·b·c·d)』 자동문</b>으로 걸어가면 얼굴 인식으로 문이 바로 열립니다.</li>
+        <li><b>Step 6. 1층 도착 로비 진입:</b> 바닥의 파란색 <b>『出口 EXIT 출구』</b> 화살표를 따라 자동문을 나오면 <b>간사이공항 제1터미널 1층 도착 로비</b>입니다.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 0-4 갈림길 -->
+  <article class="step-card arr">
+    <div class="step-top">
+      <div class="step-badge">갈림길</div>
+      <div>
+        <h3>1층 도착 로비에 나오자마자 보이는 이 표지판에서 길을 고르세요!</h3>
+        <div class="step-sub">버스와 기차(전철)는 타는 층이 다릅니다.</div>
+      </div>
+    </div>
+    <div class="photos" style="grid-template-columns:280px 1fr">
+      <figure><img src="images/kix_bus1_sign.jpg" alt="1층 로비 버스/전철 표지판"><figcaption>1층 출구 앞 파란 안내판</figcaption></figure>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;padding:6px 4px">
+        <div class="mini-box g">
+          <b class="title" style="color:var(--bus)">🚌 방법 1. 공항 리무진버스를 타실 분 (추천)</b>
+          표지판의 <b>『← Outside 리무진버스』</b> 화살표대로 <b>1층 그대로 건물 밖(야외)</b>으로 나갑니다. 계단이나 에스컬레이터를 탈 필요가 전혀 없습니다!
+        </div>
+        <div class="mini-box b">
+          <b class="title" style="color:var(--jr)">🚅 방법 2·3. JR 하루카 / 간쿠쾌속 기차를 타실 분</b>
+          표지판의 <b>『↑ Go up Outside of 2F JR/난카이 전철역』</b> 화살표대로 <b>실내 에스컬레이터나 엘리베이터를 타고 2층으로</b> 올라간 뒤 구름다리를 건넙니다.
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- ===================== 방법 1: 공항 리무진버스 ===================== -->
+<div class="wrap sec-wrap bus" id="bus">
+  <div class="sec-head bus">
+    <div class="num">METHOD 1 · 부모님께 가장 편한 추천 1순위</div>
+    <h2>🚌 방법 1: 공항 리무진버스로 우메다 가는 법</h2>
+    <div class="chips">
+      <span class="chip">제1터미널 1층 야외 『5번 승차장』</span>
+      <span class="chip">제2터미널은 『1번 승차장』</span>
+      <span class="chip">편도 1,800엔 / 왕복 3,300엔</span>
+      <span class="chip">약 50~60분 소요</span>
+    </div>
+  </div>
+
+  <!-- 버스 Step 1 -->
+  <article class="step-card bus">
+    <div class="step-top">
+      <div class="step-badge">버스 1</div>
+      <div>
+        <h3>1층 로비 문 밖으로 나와 『5번 승차장』과 『C 매표소』 찾기</h3>
+        <div class="step-sub">오사카역 앞(우메다)으로 가는 버스는 무조건 숫자 『5』만 기억하시면 됩니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img class="contain" src="images/kix_bus_official_map.gif" alt="간사이공항 제1터미널 버스 승차장 공식 지도"><figcaption>제1터미널 1층 버스 승차장 배치도 (중앙 왼쪽이 5번 승차장 & C매표소)</figcaption></figure>
+      <figure><img src="images/kix_bus2_map.jpg" alt="주요 목적지 안내판"><figcaption>현장 목적지 안내판: 『UM 大阪駅前(오사카역 앞) = 5번 승차장』</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li>1층 도착 로비 유리문을 열고 밖(야외 보도)으로 나오면 기둥마다 <b>1번부터 12번까지 큰 숫자</b>가 적혀 있습니다.</li>
+        <li><b>5번 승차장 (UM 오사카역 앞·우메다 방면):</b> 건물 중앙부에서 약간 왼쪽(F 출구 근처)에 있습니다.</li>
+        <li><b>제2터미널 도착 시 (제주항공·피치항공):</b> 1터미널로 올 필요 없이 제2터미널 1층 문 밖 <b>『1번 승차장』</b>에서 우메다행 리무진버스를 바로 탈 수 있습니다.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 버스 Step 2 -->
+  <article class="step-card bus">
+    <div class="step-top">
+      <div class="step-badge">버스 2</div>
+      <div>
+        <h3>『C 매표소』에서 버스 티켓 준비하기 (3가지 방법 중 택1)</h3>
+        <div class="step-sub">5번 승차장 바로 뒤에 있는 연두색 건물 『C 매표소(Bus Tickets C)』에서 표를 준비합니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_bus3_booth.jpg" alt="C 매표소 외관"><figcaption>① 5·6번 정류장 전용 『C 매표소』와 무인 발권기</figcaption></figure>
+      <figure><img src="images/kix_bus4_vending1.jpg" alt="리무진버스 자동발매기 전체"><figcaption>② 자동발매기 (한국어 안내문 부착, 왼쪽 인원 버튼)</figcaption></figure>
+      <figure><img src="images/kix_bus5_vending2.jpg" alt="발매기 화면 오사카역 우메다 1800엔"><figcaption>③ 화면 왼쪽 위 주황색 『大阪駅前(梅田) 1800』 터치</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <div class="two-col">
+        <div class="mini-box g">
+          <b class="title">방법 A. 현장 자동발매기에서 구매 (추천)</b>
+          <ol style="margin:4px 0;padding-left:18px">
+            <li>기계 화면 우측 상단 <b>『English / 한국어』</b>를 누르거나, 왼쪽 세로 버튼에서 <b>맨 위 주황색 『片道券(편도권)』</b> 또는 <b>세 번째 『往復券(왕복권, 14일 유효 3,300엔)』</b>을 누릅니다.</li>
+            <li>바로 아래 <b>사람 모양 버튼</b>에서 인원수를 누릅니다. (성인 2명이면 <b>어른 2명 그림 버튼</b> 클릭)</li>
+            <li>화면에서 <b>주황색 첫 번째 칸 『大阪駅前(梅田) / Osaka Sta.(Umeda) 1800』</b>을 누르고 현금이나 카드를 넣으면 표가 나옵니다.</li>
+          </ol>
+        </div>
+        <div class="mini-box b">
+          <b class="title">방법 B. 클룩 QR 바우처 / 카드 터치 탑승</b>
+          <ul style="margin:4px 0;padding-left:18px">
+            <li><b>한국에서 클룩·마이리얼트립 QR을 사 온 경우:</b> C 매표소 창구 쪽 QR 리더기가 달린 전용 발권기에서 QR코드를 스캔해 실물 티켓으로 교환합니다.</li>
+            <li><b>신용카드 터치 결제 / ICOCA 교통카드 (매표소 패스!):</b> 편도(1,800엔)로 타실 때는 표를 안 사도 됩니다! 5번 승차장에 바로 줄 섰다가 버스 탈 때 단말기에 <b>컨택리스(와이파이 표시) 신용카드</b>나 <b>ICOCA 카드</b>를 찍고 타면 자동 결제됩니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 버스 Step 3 -->
+  <article class="step-card bus">
+    <div class="step-top">
+      <div class="step-badge">버스 3</div>
+      <div>
+        <h3>『5번 승차장』에서 내릴 정류장 확인 후 캐리어 맡기고 탑승!</h3>
+        <div class="step-sub">버스는 10~15분마다 오며 선착순으로 탑승합니다. 직원에게 내릴 정류장을 말하고 캐리어를 맡기세요.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_bus6_stop5.jpg" alt="5번 승차장 표지판과 대기줄"><figcaption>① 『5 UM 大阪駅前(오사카역 앞)』 승차장과 시간대 안내</figcaption></figure>
+      <figure><img src="images/kix_bus7_timetable.jpg" alt="5번 승차장 시간표"><figcaption>② 5번 정류장 시간표 (위칸이 '시', 아래칸이 '분')</figcaption></figure>
+      <figure><img src="images/kix_bus8_boarding.jpg" alt="리무진버스 수하물 위탁 및 탑승"><figcaption>③ 직원에게 하차 정류장을 말하면 캐리어를 싣고 짐표를 줌</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>⚠️ 꼭 알아두세요! 우메다 내 하차 정류장 (2026년 최신 변경 사항):</b>
+          <ul>
+            <li>기존 『신한큐호텔』이 리모델링에 들어가면서, 현재 우메다 동북쪽(오사카역 앞) 하차장은 시간대에 따라 아래 두 곳 중 한 곳에 내려줍니다(두 곳은 길 하나 사이로 바로 옆입니다):</li>
+            <li><b>① 낮 시간대 (공항 1터미널 출발 08:45 ~ 19:30 버스):</b> <b>『호텔 한큐 레스파이어 오사카 (요도바시 우메다 타워 1층, UM9)』</b>에서 하차</li>
+            <li><b>② 이른 아침 (06:50~08:25) 및 저녁 (19:45~00:15) 버스:</b> <b>『한큐 삼번가 (오사카역 앞, UM1)』</b>에서 하차</li>
+            <li><b>③ 우메다 서남쪽 하차:</b> <b>『하비스 오사카 (HERBIS OSAKA, UM2)』</b> — 일부 버스는 한큐 레스파이어까지만 가고 하비스 오사카에는 안 가므로 대기줄이 A/B로 나뉩니다.</li>
+          </ul>
+        </li>
+        <li><b>부모님 숙소 『이비스 오사카 우메다 (ibis Osaka Umeda)』 가실 때:</b>
+          <ul>
+            <li>호텔이 오사카역 동쪽이라 <b>『한큐 레스파이어(낮)』 또는 『한큐 삼번가(아침·밤)』</b>에서 내리는 것이 훨씬 가깝습니다! (평지 도보 약 7~8분)</li>
+            <li>5번 정류장 직원이 어디서 내리는지 물어보면 <b>"오사카 에키마에 (한큐 레스파이어 / 한큐 산반가이)"</b>라고 말씀하시면 됩니다.</li>
+          </ul>
+        </li>
+        <li><b>캐리어 맡기기:</b> 직원이 캐리어에 번호표를 달아 트렁크에 실어주고 <b>보관증(짐표)</b>을 손에 쥐여줍니다. 내릴 때 이 표를 보여줘야 가방을 찾으니 주머니에 잘 챙기세요!</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 버스 Step 4 (귀국 시 참고) -->
+  <article class="step-card bus">
+    <div class="step-top">
+      <div class="step-badge">참고</div>
+      <div>
+        <h3>돌아오는 날: 우메다에서 간사이공항 가는 리무진버스 타는 곳</h3>
+        <div class="step-sub">여행 마지막 날 공항으로 돌아갈 때는 『한큐 삼번가 (오사카역 앞)』 정류장에서 탑승합니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_bus9_umeda_stop.jpg" alt="우메다 한큐 삼번가 간사이공항행 버스 정류장"><figcaption>① 파란 기둥 『오사카역 앞(한큐 삼번가) 간사이공항행 타는 곳』</figcaption></figure>
+      <figure><img src="images/kix_bus10_umeda_wait.jpg" alt="간사이공항행 제1터미널 제2터미널 안내"><figcaption>② 짐 맡길 때 1터미널/2터미널 구분 안내판</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>타는 위치:</b> 구글 지도에서 <b>『한큐 산반가이 고속버스터미널』</b> 또는 <b>『알펜 오사카(Alpen TOKYO/OSAKA 우메다)』</b> 맞은편 1층으로 오시면 첫 번째 사진 같은 파란색 큰 기둥(<b>간사이공항행 타는 곳</b>)이 있습니다.</li>
+        <li>왕복권을 끊으셨다면 남겨둔 티켓을 내고 바로 줄 서시면 되고, 편도만 끊으셨다면 정류장 안 매표기에서 표를 사거나 신용카드 터치/ICOCA로 바로 탑승합니다.</li>
+        <li>짐을 맡길 때 직원이 터미널을 물어보면 제주항공·피치항공만 <b>"제2터미널"</b>, 나머지 모든 항공사(대한항공·아시아나·진에어·티웨이 등)는 <b>"제1터미널"</b>이라고 말씀하세요.</li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<!-- ===================== 방법 2: JR 특급 하루카 ===================== -->
+<div class="wrap sec-wrap jr" id="haruka">
+  <div class="sec-head jr">
+    <div class="num">METHOD 2 · 정체 없이 47분 만에 오사카역 직통</div>
+    <h2>🚅 방법 2: JR 특급열차 『하루카 (HARUKA)』 타는 법</h2>
+    <div class="chips">
+      <span class="chip">제1터미널 2층 연결통로 ➔ 간사이공항역</span>
+      <span class="chip">파란색 JR 개찰구 ➔ 4번 승강장</span>
+      <span class="chip">외국인 할인 편도 1,900엔</span>
+      <span class="chip">약 47분 소요</span>
+    </div>
+  </div>
+
+  <!-- 하루카 Step 1 -->
+  <article class="step-card jr">
+    <div class="step-top">
+      <div class="step-badge">하루카 1</div>
+      <div>
+        <h3>1층 로비에서 『2층』으로 올라가 구름다리를 건너 『간사이공항역』으로 이동</h3>
+        <div class="step-sub">건물 밖으로 나가지 말고 실내 에스컬레이터나 엘리베이터로 2층에 올라갑니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_jr1_bridge.jpg" alt="간사이공항역 2층 연결통로"><figcaption>① 2층 구름다리(연결통로)를 건너면 간사이공항역 도착</figcaption></figure>
+      <figure><img src="images/kix_jr2_bluegate.jpg" alt="간사이공항역 매표소와 개찰구 광장"><figcaption>② 역 광장: 파란색(JR)과 빨간색(난카이)이 마주 보고 있음</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li>1층 도착 로비 안쪽의 에스컬레이터/엘리베이터를 타고 <b>2층</b>으로 올라간 뒤, <b>『Railways (철도 / JR·Nankai)』</b> 표지판을 따라 외부 연결다리를 약 1~2분 걸어 건넙니다.</li>
+        <li>다리를 건너면 넓은 역 광장이 나옵니다. 여기서 <b>색깔 법칙 하나만 기억하세요!</b>
+          <ul>
+            <li>🔵 <b>파란색 간판 (JR 서일본):</b> <b>우메다(오사카역)·신오사카·교토</b> 가는 『특급 하루카』 및 『간쿠쾌속』 ➔ <b>여기로 가세요!</b></li>
+            <li>🔴 <b>빨간/주황색 간판 (NANKAI 난카이 전철):</b> 난바역 가는 『라피트』 (우메다에 가지 않으니 헷갈리지 마세요!)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 하루카 Step 2 -->
+  <article class="step-card jr">
+    <div class="step-top">
+      <div class="step-badge">하루카 2</div>
+      <div>
+        <h3>하루카 티켓 준비: 『스마트폰 QR 바로 입장』 vs 『초록색 기계 실물 발권』</h3>
+        <div class="step-sub">출국 전 한국 여행 플랫폼(클룩·마이리얼트립·트립닷컴 등)에서 미리 할인권(1,900엔, 약 1.6만~1.8만 원)을 사두는 것이 가장 저렴합니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_jr3_office.jpg" alt="파란색 JR 티켓 오피스"><figcaption>① 파란색 『JR Ticket Office』 매표 창구</figcaption></figure>
+      <figure><img src="images/kix_jr10_umekita.jpg" alt="JR 초록색 발권기와 파란색 발권기"><figcaption>② 『Green vending machine (초록색 발권기)』에서 바우처 교환</figcaption></figure>
+      <figure><img src="images/kix_jr4_greenmachine.jpg" alt="하루카 실물 승차권"><figcaption>③ 실물 교환 시 출력되는 하루카 종이 티켓</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <div class="two-col">
+        <div class="mini-box b">
+          <b class="title" style="color:var(--jr)">방식 A. 스마트폰 QR 티켓 (WEST QR · 가장 편리!)</b>
+          <ol style="margin:4px 0;padding-left:18px">
+            <li>한국에서 예매할 때 <b>도착역을 『오사카역(Osaka)』</b>으로 선택해 구매합니다. (<small>※ 신오사카역과 헷갈리지 마세요!</small>)</li>
+            <li>바우처 링크(WEST QR)에 접속해 티켓을 등록하고 원하는 시간대의 <b>지정석 좌석</b>을 미리 지정합니다.</li>
+            <li>공항역에 도착해 <b>개찰구에 들어가기 직전 『사용개시(Use Ticket)』</b> 버튼을 누르면 움직이는 QR코드가 뜹니다. (발권기 줄 설 필요 없이 바로 개찰구로!)</li>
+          </ol>
+        </div>
+        <div class="mini-box g">
+          <b class="title" style="color:var(--good)">방식 B. 실물 티켓 교환권 / 현장 구매</b>
+          <ol style="margin:4px 0;padding-left:18px">
+            <li>실물 교환형 바우처를 사셨다면 파란색 JR 매표소 옆 <b>『초록색 발권기(Green vending machine)』</b> 또는 개찰구 옆 <b>『하루카 전용 흰색 발권기』</b>로 갑니다.</li>
+            <li>화면에서 <b>『한국어』</b> 선택 ➔ <b>『QR코드 판독』</b> ➔ 바우처 QR 스캔 및 여권 스캔 ➔ 지정석/자유석 종이 티켓 출력!</li>
+            <li>기계 조작이 어려우시면 첫 번째 사진의 파란색 <b>『JR Ticket Office』</b> 유인 창구 직원에게 여권과 바우처를 보여주시면 발권해 줍니다.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="callout">
+        ⚠️ <b>WEST QR 이용 시 꼭 주의할 점 2가지:</b><br>
+        ① <b>『사용개시』 버튼은 반드시 타는 날 개찰구 앞에서 누르세요.</b> 또한 지정석을 예약했다면 열차 출발 <b>최소 3분 전까지 사용개시</b>를 눌러야 좌석이 취소되지 않습니다.<br>
+        ② 탑승용 QR코드는 보안을 위해 실시간으로 움직이므로 <b>화면 캡처본으로는 개찰구를 통과할 수 없습니다.</b> 실제 인터넷 창을 띄워서 찍으세요.
+      </div>
+    </div>
+  </article>
+
+  <!-- 하루카 Step 3 -->
+  <article class="step-card jr">
+    <div class="step-top">
+      <div class="step-badge">하루카 3</div>
+      <div>
+        <h3>『파란색 JR 개찰구』 통과 ➔ 『4번 승강장』으로 내려가 하루카 탑승!</h3>
+        <div class="step-sub">하루카는 무조건 4번 승강장에서 출발하며, 하얀색 헬로키티 기차입니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_jr5_qrgate.jpg" alt="파란색 JR 개찰구"><figcaption>① 파란색 『JR Line GATE B』 개찰구 통과</figcaption></figure>
+      <figure><img src="images/kix_jr6_plat4.jpg" alt="4번 승강장 전광판"><figcaption>② 『4번 승강장』 전광판의 빨간 글씨 『Ltd. Exp. 특급 Haruka』 확인</figcaption></figure>
+      <figure><img src="images/kix_jr7_haruka_train.jpg" alt="헬로키티 하루카 열차 외관"><figcaption>③ 4번 승강장에 서 있는 하얀색 헬로키티 하루카 열차</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>개찰구 통과 방법:</b>
+          <ul>
+            <li><b>QR 티켓:</b> 개찰구 기둥에 달린 <b>빨간색 QR 스캐너</b>에 휴대폰 화면을 대고 통과합니다.</li>
+            <li><b>종이 티켓:</b> 개찰구 앞 투입구에 표를 넣으면 반대쪽 위로 표가 다시 튀어나옵니다. <b>나오는 표를 꼭 다시 뽑아서 챙기세요!</b> (오사카역에서 내릴 때 다시 넣어야 문이 열립니다.)</li>
+          </ul>
+        </li>
+        <li><b>4번 승강장 이동:</b> 개찰구를 지나 에스컬레이터나 엘리베이터를 타고 <b>『4번 승강장 (오사카·신오사카·교토 방면)』</b>으로 내려갑니다.</li>
+        <li><b>호차 확인:</b> 지정석을 예약하셨다면 티켓(또는 QR 화면)에 적힌 <b>호차 번호(Car No.)와 좌석 번호</b>를 보고 타시고, 자유석 티켓이라면 <b>자유석 칸(보통 5~7호차, 전광판에 Non-Reserved 표시)</b>에 빈자리에 앉으시면 됩니다.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 하루카 Step 4 -->
+  <article class="step-card jr">
+    <div class="step-top">
+      <div class="step-badge">하루카 4</div>
+      <div>
+        <h3>캐리어 보관대에 짐 넣기 ➔ 47분 뒤 『오사카역 (우메키타 지하 승강장)』 하차</h3>
+        <div class="step-sub">『덴노지역』 다음 역인 『오사카역(Osaka)』에서 내립니다. (그다음 역인 신오사카역까지 가지 않도록 주의!)</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_jr8_luggage.jpg" alt="하루카 객차 내 캐리어 보관대"><figcaption>① 각 객차 출입문 옆에 있는 대형 캐리어 전용 보관대</figcaption></figure>
+      <figure><img src="images/kix_jr9_seats.jpg" alt="하루카 열차 좌석"><figcaption>② 넓고 쾌적한 하루카 특급열차 좌석</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>캐리어 보관:</b> 열차에 타자마자 출입문 양옆에 있는 <b>2단 수하물 보관대</b>에 큰 캐리어를 넣어두고 자리로 가시면 편합니다.</li>
+        <li><b>오사카역 하차 후 출구 나오는 핵심 꿀팁 (우메키타 지하 승강장):</b>
+          <ul>
+            <li>하루카가 정차하는 곳은 JR 오사카역의 새로 생긴 <b>지하 승강장(우메키타 지하 홈, 21~24번 승강장)</b>입니다. 엘리베이터와 에스컬레이터가 잘 되어 있어 계단을 오를 일은 없습니다.</li>
+            <li><b>우메다 중심가(백화점·호텔 방향)로 가장 쉽게 나가는 법:</b>
+              <ol style="margin:4px 0;padding-left:20px">
+                <li><b>개찰구 안 연결통로 이용 (추천):</b> 지하 승강장에서 내린 뒤 바로 지하 개찰구로 나가지 마시고, 머리 위 표지판의 <b>『西口(서출구) · 中央口(중앙출구) 방면 연결통로』</b>를 따라 에스컬레이터를 타고 지상 1층으로 올라가 <b>『중앙개찰구(Central Gate)』</b>로 나가면 한큐백화점·지하상가(화이티 우메다)와 바로 연결됩니다!</li>
+                <li><b>우메키타 지하출구로 바로 나간 경우:</b> 그랑프론트 오사카(Grand Front Osaka) 남관 건물을 통과해 JR 오사카역 방향으로 걸어가시면 됩니다.</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<!-- ===================== 방법 3: JR 간쿠쾌속 ===================== -->
+<div class="wrap sec-wrap rapid" id="rapid">
+  <div class="sec-head rapid">
+    <div class="num">METHOD 3 · 예매 없이 교통카드로 타는 가성비 전철</div>
+    <h2>🚃 방법 3: JR 『간쿠쾌속 (간사이공항 쾌속)』 타는 법</h2>
+    <div class="chips">
+      <span class="chip">파란색 JR 개찰구 ➔ 3번 승강장</span>
+      <span class="chip">편도 1,180엔 (ICOCA 교통카드 태그 가능)</span>
+      <span class="chip">약 65~70분 소요</span>
+      <span class="chip">반드시 1~4호차 탑승</span>
+    </div>
+  </div>
+
+  <article class="step-card rapid">
+    <div class="step-top">
+      <div class="step-badge">간쿠쾌속</div>
+      <div>
+        <h3>파란색 JR 개찰구 ➔ 『3번 승강장』에서 은색 열차 탑승 (1~4호차 필수!)</h3>
+        <div class="step-sub">사전 예약 없이 교통카드(ICOCA 등)를 찍거나 파란색 발매기에서 1,180엔 표를 사서 바로 탈 수 있는 일반 급행열차입니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/kix_rapid1_plat3.jpg" alt="3번 승강장 간쿠쾌속"><figcaption>① 파란색 JR 개찰구 통과 후 『3번 승강장』으로 이동</figcaption></figure>
+      <figure><img src="images/kix_rapid2_train.jpg" alt="간쿠쾌속 열차 외관"><figcaption>② 주황/파란 띠가 있는 은색 열차 『関空快速(간쿠쾌속)』</figcaption></figure>
+      <figure><img src="images/kix_rapid3_seats.jpg" alt="간쿠쾌속 내부 좌석"><figcaption>③ 열차 내부 (마주 보는 박스형 좌석, 캐리어는 직접 잡고 탑승)</figcaption></figure>
+      <figure><img src="images/kix_rapid4_split.jpg" alt="히네노역 1~4호차 분리 안내"><figcaption>④ 중요! 중간 『히네노역』에서 1~4호차와 5~8호차가 분리됨</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>타는 곳:</b> 하루카와 똑같이 2층 간사이공항역 <b>파란색 JR 개찰구</b>로 들어가되, 하루카(4번 승강장) 옆인 <b>『3번 승강장』</b>으로 내려갑니다. (간혹 4번에서 출발할 때도 있으니 전광판의 파란색 <b>『Rapid 快速 大阪方面(오사카 방면)』</b>을 확인하세요.)</li>
+        <li><b>장점:</b> 요금이 <b>1,180엔</b>으로 가장 저렴하고, 오사카역 지하가 아닌 <b>JR 오사카역 지상 승강장</b>에 도착해 역 밖으로 나오기가 오히려 단순합니다.</li>
+        <li><b>🚨 절대 잊지 말아야 할 주의사항 — 무조건 『1~4호차』에 타세요!</b>
+          <ul>
+            <li>간쿠쾌속 열차는 총 8칸으로 달리다가 중간 역인 <b>『히네노(日根野)역』에서 앞 4칸(1~4호차)과 뒤 4칸(5~8호차)이 분리</b>됩니다!</li>
+            <li>특히 여행 마지막 날 <b>오사카역에서 간사이공항으로 돌아갈 때</b> 5~8호차에 잘못 타면 히네노역에서 분리되어 정반대 남쪽 끝 <b>와카야마(和歌山)</b>로 가버립니다.</li>
+            <li>열차 내부 모니터(네 번째 사진)와 승강장 바닥에 한국어로 <b>『1·2·3·4호차 = 간사이공항/오사카』</b>라고 적혀 있으니 반드시 <b>1~4호차</b>인지 확인하고 타세요!</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<!-- ===================== 우메다 하차 후 호텔 이동 ===================== -->
+<div class="wrap sec-wrap hotel" id="hotel">
+  <div class="sec-head hotel">
+    <div class="num">FINAL STEP · 우메다 도착 후 확정 숙소까지</div>
+    <h2>🏨 우메다에서 『이비스 오사카 우메다』 찾아가는 법</h2>
+    <div class="chips">
+      <span class="chip">확정 숙소: 이비스 오사카 우메다 (ibis Osaka Umeda)</span>
+      <span class="chip">주소: 오사카시 기타구 고마쓰바라초 1-5</span>
+      <span class="chip">화이티 우메다 지하상가 『7-72 출구』 엘리베이터 직결</span>
+    </div>
+  </div>
+
+  <!-- 동선 A: 지상 도보 -->
+  <article class="step-card hotel">
+    <div class="step-top">
+      <div class="step-badge">동선 A</div>
+      <div>
+        <h3>🚌 리무진버스 하차 시: 큰길 따라 걸어가는 지상 평지 코스 (도보 약 7~8분)</h3>
+        <div class="step-sub">버스에서 내려 횡단보도와 큰길(오우기마치도리)만 따라 걸으면 빨간 『ibis』 간판이 바로 보입니다.</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/ibis_street_view.jpg" alt="큰길 건너편에서 본 이비스 오사카 우메다 건물"><figcaption>① 큰길(오우기마치도리)에서 바로 보이는 검은 건물·빨간 『ibis』 간판</figcaption></figure>
+      <figure><img src="images/ibis4_exterior.jpg" alt="이비스 오사카 우메다 외관과 7-72 출구"><figcaption>② 화이티 우메다 7-72 출구 바로 옆에 붙어 있는 호텔 외관</figcaption></figure>
+      <figure><img src="images/ibis3_entrance.jpg" alt="이비스 오사카 우메다 1층 입구"><figcaption>③ 1층 『ibis OSAKA UMEDA』 정문 입구와 로비 프런트</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>1단계 (버스 하차):</b> 낮(08:45~19:30 출발)에는 <b>『호텔 한큐 레스파이어 오사카』</b>, 아침·밤에는 <b>『한큐 삼번가』</b> 정류장에서 내립니다.</li>
+        <li><b>2단계 (구글 지도 검색):</b> 스마트폰 구글 지도에 한글로 <b>`이비스 오사카 우메다`</b> 또는 영문 <b>`ibis Osaka Umeda`</b>를 입력합니다.</li>
+        <li><b>3단계 (직진 이동):</b> 한큐백화점 옆 큰길로 나와 <b>돈키호테 우메다 본점(노란색 관람차가 있는 건물)</b>과 <b>햅파이브(빨간 관람차 건물)</b> 사이 큰길(오우기마치도리)을 따라 동쪽으로 약 4~5분 직진하면 오른쪽에 검은색 외벽의 빨간 <b>『ibis』</b> 간판이 한눈에 보입니다.</li>
+        <li><b>체크인 안내:</b> 호텔 정문으로 들어가면 <b>1층에 바로 프런트 로비</b>가 있습니다. (체크인 14:00부터 / 일찍 도착 시 프런트에 무료로 캐리어 보관 가능)</li>
+      </ul>
+      <div class="callout">
+        ⚠️ <b>구글 지도 검색 시 꼭 주의하세요!</b><br>
+        근처 북동쪽에 이름이 비슷한 <b>『이비스 버짓 오사카 우메다 (ibis budget)』</b>라는 다른 등급의 호텔이 있습니다. 검색하실 때 반드시 <b>『버짓(budget)』이 없는 『이비스 오사카 우메다 (고마쓰바라초 1-5)』</b>인지 확인하세요!
+      </div>
+    </div>
+  </article>
+
+  <!-- 동선 B: 지하상가 7-72 엘리베이터 직결 -->
+  <article class="step-card hotel">
+    <div class="step-top">
+      <div class="step-badge">동선 B</div>
+      <div>
+        <h3>🚅 JR 기차 하차 시 / 비·추위 피할 때: 『화이티 우메다 7-72 출구』 엘리베이터 직결 코스</h3>
+        <div class="step-sub">우메다 지하상가(Whity Umeda)에서 계단 하나 없이 호텔 전용 엘리베이터로 1층 로비까지 바로 올라갑니다!</div>
+      </div>
+    </div>
+    <div class="photos">
+      <figure><img src="images/ibis_whity_yellow772.jpg" alt="화이티 우메다 7-72 출구 노란 표지판"><figcaption>① 지하상가 노란색 『Exit 7-72 (イビス大阪梅田 / ibis Osaka Umeda)』 표지판</figcaption></figure>
+      <figure><img src="images/ibis_whity_door.jpg" alt="계단 앞 벽면 ibis 화살표 안내판"><figcaption>② 계단으로 올라가지 마시고 오른쪽 벽면 『ibis ←』 화살표 확인!</figcaption></figure>
+      <figure><img src="images/ibis_whity_el2.jpg" alt="지하 1층 이비스 전용 엘리베이터"><figcaption>③ 오른쪽 문 안 『ibis 전용 엘리베이터(B1)』를 타면 1층 호텔 입구 직결!</figcaption></figure>
+    </div>
+    <div class="step-body">
+      <ul>
+        <li><b>1단계 (화이티 우메다 진입):</b> JR 오사카역(중앙개찰구/남쪽출구) 또는 지하철 미도스지선 우메다역에서 지하로 내려와 <b>『화이티 우메다 (Whity Umeda)』 지하상가</b>로 들어갑니다.</li>
+        <li><b>2단계 (East Mall ➔ 7-72 출구 이동):</b> 천장 이정표에서 <b>『East Mall (이스트몰)』</b> 방향을 따라 끝까지 걸어가면 첫 번째 사진처럼 노란색 <b>『出口 Exit 7-72 (ibis Osaka Umeda)』</b> 표지판이 나옵니다.</li>
+        <li><b>3단계 (전용 엘리베이터 탑승 — 핵심 꿀팁!):</b> 7-72 출구 통로로 들어서면 정면에 계단이 보입니다. <b>무거운 캐리어를 들고 계단으로 올라가지 마세요!</b> 계단 바로 오른쪽 벽면에 빨간 <b>『ibis』 안내판과 자동문</b>이 있고, 그 안에 <b>호텔 1층으로 바로 올라가는 전용 엘리베이터(B1➔1F)</b>가 있습니다.</li>
+        <li><b>여행 중 활용 팁:</b> 호텔에 머무시는 동안 난바·도톤보리(미도스지선 우메다역)나 오사카성(다니마치선 히가시우메다역)에 가실 때도 호텔 바로 옆 <b>7-72 출구 엘리베이터</b>를 타고 지하로 내려가면 날씨와 상관없이 쾌적하게 지하철을 타실 수 있습니다.</li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<!-- ===================== 추천 유튜브 영상 6선 ===================== -->
+<div class="wrap sec-wrap yt" id="youtube">
+  <div class="sec-head yt">
+    <div class="num">VIDEO GUIDE · 출국 전 눈으로 미리 익히기</div>
+    <h2>📺 부모님과 함께 보기 좋은 유튜브 영상 6선</h2>
+    <div class="chips">
+      <span class="chip">실제 걸어가는 카메라 시점 영상</span>
+      <span class="chip">버튼을 누르면 유튜브 영상으로 바로 이동합니다</span>
+    </div>
+  </div>
+
+  <div class="yt-grid">
+    <!-- YT 1 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_limo1.jpg" alt="리무진버스 타는법 총정리 유튜브">
+          <span class="yt-tag">🚌 리무진버스 총정리</span>
+          <span class="yt-time">7:09</span>
+        </div>
+        <div class="yt-info">
+          <h3>간사이공항에서 오사카 시내 가는법｜이렇게 편한데 왜 몰랐지? 리무진버스 타는법 총정리</h3>
+          <div class="yt-meta">채널: 마키짱 · 조회수 1.1만회 · 최신 영상</div>
+          <ul class="yt-desc">
+            <li>입국장 나와서 1층 버스 매표소·승차장 찾는 실제 동선</li>
+            <li>무인 발권기 티켓 구매 및 캐리어 맡기는 모습 수록</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=1NBshtGzizk" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (1NBshtGzizk)</a>
+      </div>
+    </div>
+
+    <!-- YT 2 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_limo2.jpg" alt="간사이공항에서 우메다역 리무진 최신영상">
+          <span class="yt-tag">🚌 우메다행 리무진 실전</span>
+          <span class="yt-time">8:31</span>
+        </div>
+        <div class="yt-info">
+          <h3>간사이공항에서 우메다역 리무진 최신영상, 간사이공항에서 우메다역 가는법</h3>
+          <div class="yt-meta">채널: 정학이네 · 조회수 2.5만회</div>
+          <ul class="yt-desc">
+            <li>5번 승차장에서 오사카역(우메다)행 리무진버스 탑승 전 과정</li>
+            <li>우메다 정류장 하차 후 주변 모습이 그대로 담겨 있어 길 익히기 좋음</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=aIDteaqngBQ" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (aIDteaqngBQ)</a>
+      </div>
+    </div>
+
+    <!-- YT 3 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_all3.jpg" alt="2026 최신 간사이공항 교통 가이드">
+          <span class="yt-tag">✈️ 2026 교통편 비교</span>
+          <span class="yt-time">9:36</span>
+        </div>
+        <div class="yt-info">
+          <h3>2026 최신 반영✈️ 간사이공항 교통 가이드! 오사카 시내 가는 방법 총정리</h3>
+          <div class="yt-meta">채널: 하찬투어 hachantour · 조회수 4.1만회</div>
+          <ul class="yt-desc">
+            <li>리무진버스, JR 하루카, 간쿠쾌속, 라피트 장단점 한눈에 비교</li>
+            <li>숙소 위치별로 어떤 교통수단을 타야 하는지 깔끔하게 설명</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=nFlW_L2E-JY" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (nFlW_L2E-JY)</a>
+      </div>
+    </div>
+
+    <!-- YT 4 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_haruka4.jpg" alt="간사이공항 하루카 타는 법 초상세 가이드">
+          <span class="yt-tag">🚅 하루카 발권·탑승 바이블</span>
+          <span class="yt-time">18:14</span>
+        </div>
+        <div class="yt-info">
+          <h3>간사이 공항에서 시내가는 법, 엄청 자세함! | JR 하루카 타는 법·티켓 발권 방법</h3>
+          <div class="yt-meta">채널: 솔직꿀팁 · 조회수 81만회 돌파 인기 영상</div>
+          <ul class="yt-desc">
+            <li>2층 간사이공항역으로 올라가는 길부터 초록색 발권기 화면까지 초밀착 촬영</li>
+            <li>기차 타는 법이 막막할 때 이 영상 하나만 보면 완벽 해결</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=MTOuUpoTEJg" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (MTOuUpoTEJg)</a>
+      </div>
+    </div>
+
+    <!-- YT 5 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_haruka5.jpg" alt="하루카 타고 오사카역으로 가다">
+          <span class="yt-tag">🚅 하루카➔오사카역 직통</span>
+          <span class="yt-time">18:27</span>
+        </div>
+        <div class="yt-info">
+          <h3>간사이공항에서 하루카 특급열차를 타고 빠르고 편리하게 오사카역으로 가다</h3>
+          <div class="yt-meta">채널: 미도구리 더홍 Midoguri The Hong</div>
+          <ul class="yt-desc">
+            <li>간사이공항역 4번 승강장 탑승부터 JR 오사카역 우메키타 지하 승강장 하차까지</li>
+            <li>오사카역에서 내려 지상으로 올라오는 실제 출구 동선 수록</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=Od6Ebm1y44w" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (Od6Ebm1y44w)</a>
+      </div>
+    </div>
+
+    <!-- YT 6 -->
+    <div class="yt-card">
+      <div>
+        <div class="yt-thumb">
+          <img src="images/yt_immig6.jpg" alt="비짓재팬웹 간사이공항 입국심사 a b c d 경로">
+          <span class="yt-tag">🛬 최신 입국심사 동선</span>
+          <span class="yt-time">16:12</span>
+        </div>
+        <div class="yt-info">
+          <h3>비짓재팬웹 QR 등록방법 | 오사카 간사이공항 입국심사 a b c d 경로</h3>
+          <div class="yt-meta">채널: 미도구리 더홍 Midoguri The Hong · 최신 영상</div>
+          <ul class="yt-desc">
+            <li>새로 바뀐 간사이공항 통합 키오스크 사용법과 a·b·c·d 레인 완벽 설명</li>
+            <li>비짓재팬웹 사전 등록부터 세관 전자게이트 통과까지 미리 확인 가능</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yt-foot">
+        <a class="link yt-btn" href="https://www.youtube.com/watch?v=lV8TRfpJIfs" target="_blank" rel="noopener">▶ 유튜브에서 영상 바로 보기 (lV8TRfpJIfs)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    🔗 <b>공식 홈페이지 실시간 시간표 링크:</b><br>
+    • 간사이공항 리무진버스(KATE) 우메다 노선 한국어 공식 시간표: <a href="https://www.kate.co.jp/kr/timetable/detail/UM" target="_blank" rel="noopener" style="color:var(--bus);font-weight:700">https://www.kate.co.jp/kr/timetable/detail/UM</a><br>
+    • JR 서일본 특급 하루카 한국어 공식 안내: <a href="https://www.westjr.co.jp/global/kr/ticket/pass/haruka/" target="_blank" rel="noopener" style="color:var(--jr);font-weight:700">https://www.westjr.co.jp/global/kr/ticket/pass/haruka/</a>
+  </div>
+</div>
+</main>
+
+<footer>
+  사진 출처: 간사이공항 리무진버스(KATE) 공식 안내도 및 실제 여행자 네이버 블로그 후기 · 부모님 오사카 여행을 위해 정리한 가족용 가이드입니다.
+</footer>
+</body>
+</html>
