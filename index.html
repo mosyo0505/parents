@@ -245,21 +245,61 @@
       display: block;
       max-width: 100%;
       width: 100%;
-      overflow-x: auto;
+      overflow-x: auto !important;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
-      margin: 10px 0 16px;
+      touch-action: pan-x pan-y;
+      overscroll-behavior-x: contain;
+      margin: 6px 0 18px;
       border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+    }
+    .mobile-table-wrap::-webkit-scrollbar {
+      height: 8px;
+    }
+    .mobile-table-wrap::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 99px;
+    }
+    .mobile-table-wrap::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 99px;
     }
     .mobile-table-hint {
       display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       font-size: 13.5px;
       font-weight: 800;
-      color: #b45309;
+      color: #92400e;
       background: #fef3c7;
-      padding: 6px 12px;
-      border-radius: 8px;
+      border: 1.5px solid #fcd34d;
+      padding: 7px 10px;
+      border-radius: 10px;
       margin-bottom: 6px;
-      text-align: center;
+    }
+    .table-scroll-btns {
+      display: flex;
+      gap: 6px;
+    }
+    .tbl-scr-btn {
+      background: #d97706;
+      color: #ffffff;
+      border: none;
+      border-radius: 7px;
+      padding: 5px 10px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    }
+    .tbl-scr-btn:active {
+      background: #b45309;
+      transform: scale(0.97);
     }
 
     /* Bottom Tab Switch Card */
@@ -767,7 +807,7 @@
       .tab-btn { min-width: 0; width: 100%; padding: 9px 4px; border-radius: 12px; overflow: hidden; }
       .tab-btn .tab-main-title { font-size: 14px; white-space: nowrap; }
       .tab-btn .tab-sub-title { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-      .mobile-table-hint { display: block; }
+      .mobile-table-hint { display: flex; }
 
       #tab-kix .wrap { padding: 0 12px; }
       #tab-kix .hero { padding: 28px 0 60px; }
@@ -882,7 +922,13 @@
   <div class="panel">
     <h2>한눈에 비교: 간사이공항 ➔ 우메다(오사카역) 3가지 이동법</h2>
     <p class="lead">우메다(오사카역)까지는 환승 없이 한 번에 가는 교통편이 3가지 있습니다. 부모님 체력과 짐 무게에 맞춰 골라보세요.</p>
-    <div class=\"mobile-table-wrap\"><div class=\"mobile-table-hint\">👉 표를 좌우로 밀어서 전체 내용을 확인하세요</div><table>
+    <div class="mobile-table-hint">
+      <span>👉 표를 좌우로 밀거나 버튼을 누르세요</span>
+      <div class="table-scroll-btns">
+        <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, -240)">◀ 왼쪽</button>
+        <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, 240)">오른쪽 ▶</button>
+      </div>
+    </div><div class="mobile-table-wrap"><table>
       <thead>
         <tr>
           <th>구분</th>
@@ -1644,7 +1690,13 @@
         숙소인 <strong>이비스 오사카 우메다</strong>는 <strong>한큐 오사카우메다역</strong>과 <strong>JR 오사카역</strong> 모두 걸어서 5~6분 거리라 교토 당일치기에 최고의 위치입니다! 가시는 첫 목적지에 맞춰 아래 표에서 고르세요.
       </p>
 
-      <div class=\"mobile-table-wrap\"><div class=\"mobile-table-hint\">👉 표를 좌우로 밀어서 전체 내용을 확인하세요</div><table class="compare-table">
+      <div class="mobile-table-hint">
+      <span>👉 표를 좌우로 밀거나 버튼을 누르세요</span>
+      <div class="table-scroll-btns">
+        <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, -240)">◀ 왼쪽</button>
+        <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, 240)">오른쪽 ▶</button>
+      </div>
+    </div><div class="mobile-table-wrap"><table class="compare-table">
         <thead>
           <tr>
             <th>구분</th>
@@ -2366,6 +2418,14 @@
       }
     }
 
+    function scrollTable(btn, delta) {
+      var hint = btn.closest(".mobile-table-hint");
+      if (!hint) return;
+      var wrap = hint.nextElementSibling;
+      if (wrap && wrap.classList.contains("mobile-table-wrap")) {
+        wrap.scrollBy({ left: delta, behavior: "smooth" });
+      }
+    }
     function setFontScale(scale, btn) {
       document.documentElement.style.setProperty("--font-scale", scale);
       var btns = document.querySelectorAll(".font-btn");
