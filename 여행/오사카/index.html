@@ -136,7 +136,7 @@
       margin: 0 auto;
       padding: 2px 12px 10px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 8px;
     }
     .tab-btn {
@@ -328,6 +328,11 @@
     .bottom-switch-btn.to-kyoto {
       background: linear-gradient(135deg, #4a0e2e 0%, #7b1fa2 60%, #1e40af 100%);
     }
+    .bottom-switch-btn.to-map {
+      background: linear-gradient(135deg, #047857 0%, #0d9488 100%);
+      box-shadow: 0 8px 22px rgba(13, 148, 136, 0.32);
+      margin-top: 10px;
+    }
     .bottom-switch-btn.to-kix {
       background: linear-gradient(135deg, #183446 0%, #1b4965 55%, #b85d19 100%);
     }
@@ -392,7 +397,7 @@
     #tab-kix .win { background: var(--good-soft); border-radius: 8px; padding: 1px 8px; font-weight: 700; color: var(--good); }
     #tab-kix .warn { background: var(--bad-soft); border-radius: 8px; padding: 1px 8px; font-weight: 700; color: var(--bad); }
     #tab-kix .info-badge { background: var(--jr-soft); border-radius: 8px; padding: 1px 8px; font-weight: 700; color: var(--jr); }
-    #tab-kix .rec-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 22px; }
+    #tab-kix .rec-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
     #tab-kix .rec-box { border-radius: 18px; padding: 20px 22px; border: 2px solid var(--line); }
     #tab-kix .rec-box.b { background: var(--bus-soft); border-color: #f0cfb0; }
     #tab-kix .rec-box.j { background: var(--jr-soft); border-color: #bfd9f2; }
@@ -436,14 +441,14 @@
     #tab-kix .jr .callout { border-color: var(--jr); background: var(--jr-soft); }
     #tab-kix .rapid .callout { border-color: var(--rapid); background: var(--rapid-soft); }
     #tab-kix .hotel .callout { border-color: #8a6a3b; background: #f6efe3; }
-    #tab-kix .two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; margin-top: 10px; }
+    #tab-kix .two-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 10px; }
     #tab-kix .mini-box { border-radius: 14px; padding: 14px 18px; font-size: calc(16.5px * var(--font-scale)); border: 1px solid var(--line); }
     #tab-kix .mini-box.g { background: var(--good-soft); border-color: #c5e4d4; }
     #tab-kix .mini-box.w { background: var(--bad-soft); border-color: #f3cdb8; }
     #tab-kix .mini-box.b { background: var(--jr-soft); border-color: #c2dcf5; }
     #tab-kix .mini-box b.title { display: block; font-size: calc(18px * var(--font-scale)); margin-bottom: 4px; }
     #tab-kix .note { background: #fff8e6; border: 1px solid #f1dfae; border-radius: 16px; padding: 16px 20px; font-size: calc(16px * var(--font-scale)); color: #5c4b20; margin-top: 18px; }
-    #tab-kix .yt-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 18px; }
+    #tab-kix .yt-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
     #tab-kix .yt-card { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; }
     #tab-kix .yt-thumb { position: relative; background: #000; }
     #tab-kix .yt-thumb img { width: 100%; height: 195px; object-fit: cover; display: block; opacity: .92; }
@@ -753,6 +758,293 @@
       touch-action: pan-x pan-y;
     }
     
+    
+    /* ================= TAB 3: OSAKA ROUTE MAP STYLES ================= */
+    .tab-btn.active-map {
+      background: linear-gradient(135deg, #047857 0%, #0d9488 100%);
+      border-color: #a7f3d0;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.45);
+      transform: translateY(-1px);
+    }
+    [id^="map-"] {
+      scroll-margin-top: 115px;
+    }
+    #tab-map {
+      background: #f8fafc;
+      color: var(--text);
+      padding: 18px 12px 30px;
+    }
+    #tab-map .container { max-width: 940px; margin: 0 auto; }
+    #tab-map .hero.map-hero {
+      background: linear-gradient(135deg, #064e3b 0%, #0f766e 55%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 32px 24px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(6, 78, 59, 0.22);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    #tab-map .hero-badge {
+      display: inline-block;
+      background: #fbbf24;
+      color: #111827;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    #tab-map .hero h1 { font-size: calc(30px * var(--font-scale)); font-weight: 900; line-height: 1.3; margin: 0 0 10px; }
+    #tab-map .hero p { font-size: calc(18px * var(--font-scale)); color: #d1fae5; font-weight: 500; margin: 0; }
+    #tab-map .section-card {
+      max-width: 100%;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    #tab-map .section-title {
+      font-size: calc(23px * var(--font-scale));
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #tab-map .good-box {
+      background: var(--success-light);
+      border-left: 7px solid var(--success);
+      padding: 15px 18px;
+      border-radius: 12px;
+      margin: 14px 0;
+      font-size: calc(16.5px * var(--font-scale));
+    }
+    #tab-map .good-box strong { color: #03543f; }
+    #tab-map table.compare-table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      margin: 6px 0;
+      font-size: calc(16px * var(--font-scale));
+    }
+    #tab-map table.compare-table th, #tab-map table.compare-table td {
+      border: 1.5px solid #cbd5e1;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    #tab-map table.compare-table th {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: calc(16px * var(--font-scale));
+    }
+    #tab-map table.compare-table tr.best-row {
+      background: #f0fdf4;
+      font-weight: 700;
+    }
+    #tab-map .sign-pill, #tab-map .sign-pill-blue, #tab-map .sign-pill-red, #tab-map .sign-pill-hankyu {
+      display: inline-block;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: calc(15px * var(--font-scale));
+      margin: 2px 2px;
+    }
+    #tab-map .sign-pill { background: #78350f; color: #fef3c7; }
+    #tab-map .sign-pill-blue { background: #1d4ed8; color: #ffffff; }
+    #tab-map .sign-pill-red { background: #dc2626; color: #ffffff; }
+    #tab-map .sign-pill-hankyu { background: #6b1d4a; color: #fde68a; }
+
+    /* Core 6 Lines Summary Cards */
+    .core-lines-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .line-card {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 16px 16px;
+    }
+    .line-card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .line-symbol {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 19px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    }
+    .line-name {
+      font-size: calc(19px * var(--font-scale));
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .line-sub {
+      font-size: calc(15.5px * var(--font-scale));
+      color: #475569;
+      margin-top: 3px;
+    }
+    .route-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .st-node {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 6px 10px;
+      font-size: calc(15px * var(--font-scale));
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .st-node small {
+      font-size: calc(12px * var(--font-scale));
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .st-node.here {
+      border-width: 2.5px;
+      font-weight: 900;
+      color: #0f172a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .st-node.spot {
+      background: #fffbeb;
+      border-color: #f59e0b;
+      color: #92400e;
+    }
+    .st-node.spot small { color: #b45309; }
+    .st-arrow {
+      font-weight: 900;
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    /* Interactive Map Zoom Viewer */
+    .map-viewer-card {
+      border: 2px solid #cbd5e1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f1f5f9;
+      margin-top: 12px;
+    }
+    .map-toolbar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .map-zoom-group, .map-pan-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .map-btn {
+      background: rgba(255,255,255,0.14);
+      color: #ffffff;
+      border: 1.5px solid rgba(255,255,255,0.28);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .map-btn.active {
+      background: #fbbf24;
+      color: #111827;
+      border-color: #fbbf24;
+    }
+    .map-pan-btn {
+      background: #0d9488;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .map-open-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #2563eb;
+      color: #ffffff !important;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 13.5px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .map-open-btn.pdf {
+      background: #dc2626;
+    }
+    .map-canvas-scroll {
+      width: 100%;
+      max-width: 100%;
+      contain: inline-size;
+      max-height: 72vh;
+      overflow: auto !important;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y pinch-zoom;
+      overscroll-behavior: contain;
+      background: #ffffff;
+      border-bottom: 1.5px solid #cbd5e1;
+    }
+    .map-zoom-img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      transition: width 0.18s ease;
+      cursor: zoom-in;
+    }
+    .map-caption {
+      padding: 11px 14px;
+      font-size: calc(15px * var(--font-scale));
+      font-weight: 700;
+      color: #1e293b;
+      background: #f8fafc;
+      text-align: center;
+    }
+
     /* ================= LIGHTBOX & FLOATING TOP BUTTON ================= */
     .lightbox-overlay {
       position: fixed;
@@ -818,10 +1110,16 @@
       .app-brand { font-size: 14.5px; min-width: 0; }
       .app-brand-badge { display: none; }
       .font-btn { padding: 4px 8px; font-size: 12px; }
-      .main-tabs { padding: 2px 10px 8px; gap: 6px; }
-      .tab-btn { min-width: 0; width: 100%; padding: 9px 4px; border-radius: 12px; overflow: hidden; }
-      .tab-btn .tab-main-title { font-size: 14px; white-space: nowrap; }
-      .tab-btn .tab-sub-title { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+      .main-tabs { padding: 2px 8px 8px; gap: 5px; }
+      .tab-btn { min-width: 0; width: 100%; padding: 8px 3px; border-radius: 11px; overflow: hidden; }
+      .tab-btn .tab-main-title { font-size: 13px; white-space: nowrap; letter-spacing: -0.04em; }
+      .tab-btn .tab-sub-title { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+      #tab-map { padding: 12px 10px 24px; }
+      #tab-map .hero.map-hero { padding: 24px 16px; border-radius: 18px; }
+      #tab-map .hero h1 { font-size: calc(25px * var(--font-scale)); }
+      #tab-map .section-card { max-width: 100%; padding: 18px 14px; border-radius: 18px; }
+      .map-toolbar { padding: 8px 10px; }
+      .map-btn, .map-pan-btn, .map-open-btn { font-size: 12.5px; padding: 5px 8px; }
       .mobile-table-hint { display: flex; }
 
       #tab-kix .wrap { padding: 0 12px; }
@@ -873,12 +1171,16 @@
 
     <div class="main-tabs" role="tablist">
       <button type="button" id="btn-tab-kix" class="tab-btn active-kix" role="tab" aria-selected="true" onclick="switchTab('kix')">
-        <span class="tab-main-title">✈️ 1. 간사이공항 ➔ 우메다</span>
-        <span class="tab-sub-title">입국 · 리무진 · 하루카 · 이비스호텔</span>
+        <span class="tab-main-title">✈️ 1. 공항➔우메다</span>
+        <span class="tab-sub-title">리무진 · 하루카 · 숙소</span>
       </button>
       <button type="button" id="btn-tab-kyoto" class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('kyoto')">
-        <span class="tab-main-title">⛩️ 2. 우메다 ⇄ 교토·청수사</span>
-        <span class="tab-sub-title">한큐특급 · JR신쾌속 · 청수사 · 복귀</span>
+        <span class="tab-main-title">⛩️ 2. 우메다⇄교토</span>
+        <span class="tab-sub-title">한큐 · JR · 청수사</span>
+      </button>
+      <button type="button" id="btn-tab-map" class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('map')">
+        <span class="tab-main-title">🗺️ 3. 전체 노선도</span>
+        <span class="tab-sub-title">지하철 · JR · 한글지도</span>
       </button>
     </div>
   </div>
@@ -2558,6 +2860,409 @@
         </div>
         <span style="font-size:26px;">➔</span>
       </button>
+      <button type="button" class="bottom-switch-btn to-map" onclick="switchTab('map', true)">
+        <div>
+          🗺️ 3편: 오사카·간사이 전체 한글 노선도 보기
+          <span class="sub">숙소 기준 핵심 6대 노선 요약 · 오사카 지하철 · JR · 간사이 통합 노선도</span>
+        </div>
+        <span style="font-size:26px;">➔</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div id="tab-map" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-map">
+    <div class="container">
+      <!-- HERO -->
+      <div class="hero map-hero">
+        <div class="hero-badge">🗺️ 우메다 『이비스 호텔』 기준 핵심 요약 + 공식 한글 노선도 4종</div>
+        <h1>오사카·간사이 지역 전체 노선도 한눈에 보기</h1>
+        <p>글씨가 작아 보기 힘든 노선도를 <strong>『확대 버튼(+1.8배 / +2.8배)』</strong>과 <strong>『핵심 노선 요약도』</strong>로 쉽게 확인하세요!</p>
+        <div style="margin-top: 16px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+          <a href="오사카_전체_노선도.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#fbbf24; color:#111827; font-weight:900; font-size:15.5px; padding:10px 20px; border-radius:999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.25);">📄 노선도 가이드 PDF 다운로드</a>
+          <a href="images/map_osaka_metro_ko.png" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#ffffff; color:#0f172a; font-weight:900; font-size:15.5px; padding:10px 20px; border-radius:999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2);">🚇 지하철 노선도 원본 바로 열기</a>
+        </div>
+      </div>
+
+      <!-- SECTION 1: 부모님 맞춤 우메다(이비스 호텔) 기준 핵심 노선 요약도 -->
+      <div id="map-summary" class="section-card">
+        <div class="section-title">🎯 1. 부모님이 실제로 타실 『오사카 핵심 6대 노선』 큰글씨 요약도</div>
+        <p style="margin-bottom: 14px; font-size: calc(17px * var(--font-scale)); color:#334155;">
+          오사카 지하철·전철은 노선마다 <strong>고유 색깔과 알파벳 역 번호(예: 우메다 = 빨간색 M16)</strong>가 정해져 있어, 일본어를 몰라도 <strong>색깔과 숫자</strong>만 보면 절대 길을 잃지 않습니다!
+        </p>
+
+        <div class="core-lines-grid">
+          <!-- Line 1: Midosuji Line -->
+          <div class="line-card" style="border-left: 8px solid #e5171f;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#e5171f;">M</span>
+              <div>
+                <div class="line-name" style="color:#b91c1c;">① 오사카 메트로 미도스지선 (빨간색 · 여행 1순위 노선!)</div>
+                <div class="line-sub">숙소 근처 『우메다역(M16)』에서 난바·도톤보리·신사이바시·덴노지까지 환승 없이 한 번에 갑니다!</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node">신오사카<small>M13(신칸센)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#e5171f; background:#fef2f2;">🏨 우메다<small>M16(숙소 도보5분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">혼마치<small>M18(주오선 환승)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">신사이바시<small>M19(쇼핑거리·7분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🔥 난바(도톤보리)<small>M20(글리코상·9분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">도부쓰엔마에<small>M22(신세카이/쓰텐카쿠)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">덴노지<small>M23(하루카스300·15분)</small></span>
+            </div>
+          </div>
+
+          <!-- Line 2: Tanimachi Line -->
+          <div class="line-card" style="border-left: 8px solid #8f1982;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#8f1982;">T</span>
+              <div>
+                <div class="line-name" style="color:#6b1d4a;">② 오사카 메트로 다니마치선 (보라색 · 오사카성 직통!)</div>
+                <div class="line-sub">이비스 호텔에서 가장 가까운 『히가시우메다역(T20, 도보 3분)』에서 오사카성까지 3정거장(6분)!</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node spot">나카자키초<small>T19(레트로 카페거리)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#8f1982; background:#fdf4ff;">🏨 히가시우메다<small>T20(숙소 도보3분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">미나미모리마치<small>T21(사카이스지선 환승)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">덴마바시<small>T22(게이한선 환승)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🏯 다니마치4초메<small>T23(오사카성 남문·6분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">덴노지<small>T27(하루카스300)</small></span>
+            </div>
+          </div>
+
+          <!-- Line 3: Chuo Line -->
+          <div class="line-card" style="border-left: 8px solid #009a66;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#009a66;">C</span>
+              <div>
+                <div class="line-name" style="color:#047857;">③ 오사카 메트로 주오선 (초록색 · 가이유칸/대관람차 & 오사카성 공원)</div>
+                <div class="line-sub">미도스지선 『혼마치역(M18)』 또는 다니마치선 『다니마치4초메역(T23)』에서 초록색 주오선으로 갈아탑니다.</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node spot">유메시마<small>C09(박람회장)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node spot">🎡 오사카코<small>C11(가이유칸·덴포잔 관람차)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node">벤텐초<small>C13(JR순환선 환승)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#009a66; background:#ecfdf5;">🔄 혼마치<small>C16(미도스지선 환승)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node">다니마치4초메<small>C18(오사카성)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node spot">🌳 모리노미야<small>C19(오사카성 공원 정문)</small></span>
+            </div>
+          </div>
+
+          <!-- Line 4: Sakaisuji Line -->
+          <div class="line-card" style="border-left: 8px solid #814721;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#814721;">K</span>
+              <div>
+                <div class="line-name" style="color:#78350f;">④ 오사카 메트로 사카이스지선 (갈색 · 주택박물관 & 구로몬시장)</div>
+                <div class="line-sub">숙소 동쪽 『오기마치역(K12)』 또는 『미나미모리마치역(K13)』에서 탑승합니다 (한큐 센리선과 직결).</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node spot">👘 덴진바시스지6초메<small>K11(오사카 주택박물관)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#814721; background:#fef3c7;">🏨 오기마치<small>K12(숙소 도보7분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">기타하마<small>K14(강변 카페거리)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">나가호리바시<small>K16</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🍣 닛폰바시<small>K17(구로몬시장·도톤보리 동쪽)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🗼 에비스초<small>K18(쓰텐카쿠 타워 바로 앞)</small></span>
+            </div>
+          </div>
+
+          <!-- Line 5: JR Osaka Loop Line & Airport -->
+          <div class="line-card" style="border-left: 8px solid #f15a22;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#f15a22;">O</span>
+              <div>
+                <div class="line-name" style="color:#c2410c;">⑤ JR 오사카 순환선 (주황색 O) & 간사이공항선 (파란색 S)</div>
+                <div class="line-sub">『JR 오사카역(O11)』에서 오사카성 공원·유니버설 스튜디오(USJ)·간사이공항으로 연결됩니다.</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node spot">✈️ 간사이공항<small>하루카 47분 / 간쿠쾌속 65분</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node">니시쿠조<small>O14(유니버설시티 P 환승)</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#f15a22; background:#fff7ed;">🏨 JR 오사카역<small>O11(숙소 도보6분)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">덴마<small>O10(덴진바시스지 상점가)</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node">사쿠라노미야<small>O09</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🏯 오사카조코엔<small>O08(오사카성 공원·10분)</small></span>
+            </div>
+          </div>
+
+          <!-- Line 6: Hankyu & JR Kyoto/Kobe -->
+          <div class="line-card" style="border-left: 8px solid #6b1d4a;">
+            <div class="line-card-head">
+              <span class="line-symbol" style="background:#6b1d4a;">HK</span>
+              <div>
+                <div class="line-name" style="color:#5c1349;">⑥ 한큐전철 (교토·아라시야마·고베) & JR 신쾌속 (교토·고베)</div>
+                <div class="line-sub">숙소에서 도보 6분 거리인 『한큐 오사카우메다역』과 『JR 오사카역』에서 주변 도시로 바로 출발합니다.</div>
+              </div>
+            </div>
+            <div class="route-strip">
+              <span class="st-node spot">🚢 고베 산노미야<small>한큐 27분 / JR 21분</small></span>
+              <span class="st-arrow">⇄</span>
+              <span class="st-node here" style="border-color:#6b1d4a; background:#fdf4ff;">🏨 오사카우메다 / JR오사카<small>HK01 / JR A47</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">🎋 가쓰라 ➔ 아라시야마<small>한큐 교토선·아라시야마선</small></span>
+              <span class="st-arrow">➔</span>
+              <span class="st-node spot">⛩️ 교토 가와라마치<small>HK86(한큐 특급 43분·청수사 방면)</small></span>
+              <span class="st-arrow">/</span>
+              <span class="st-node spot">🚅 JR 교토역<small>JR 신쾌속 29분</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: 주요 관광지별 타는 역·노선 빠른 찾기 표 -->
+      <div id="map-spots" class="section-card">
+        <div class="section-title">📍 2. 숙소(이비스 오사카 우메다) 출발 ➔ 주요 관광지별 타는 노선 조견표</div>
+        <div class="mobile-table-hint">
+          <span>👈 표를 좌우로 밀거나 버튼을 눌러보세요</span>
+          <span class="table-scroll-btns">
+            <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, -220)">◀ 왼쪽</button>
+            <button type="button" class="tbl-scr-btn" onclick="scrollTable(this, 220)">오른쪽 ▶</button>
+          </span>
+        </div>
+        <div class="mobile-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>목적지 (관광 명소)</th>
+                <th>타는 역 (숙소 기준)</th>
+                <th>탑승 노선 (색깔·기호)</th>
+                <th>내리는 역</th>
+                <th>소요시간 · 요금</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="best-row">
+                <td><strong>🔥 도톤보리 · 글리코상<br/>신사이바시 상점가</strong></td>
+                <td>지하철 <strong>우메다역 (M16)</strong><br/><small>(7-72 엘리베이터로 지하 직결)</small></td>
+                <td><span class="sign-pill-red">M 미도스지선 (빨간색)</span><br/><small>나카모즈·덴노지 방면(1번 홈)</small></td>
+                <td><strong>난바역 (M20)</strong> 14번 출구<br/><small>(신사이바시는 M19 하차)</small></td>
+                <td><strong>4정거장 (9분)</strong><br/>240엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>🏯 오사카성 천수각</strong></td>
+                <td>지하철 <strong>히가시우메다역 (T20)</strong><br/><small>(숙소에서 도보 3분)</small></td>
+                <td><span class="sign-pill-hankyu">T 다니마치선 (보라색)</span><br/><small>덴노지·야오미나미 방면(1번 홈)</small></td>
+                <td><strong>다니마치4초메역 (T23)</strong><br/><small>1-B 또는 9번 출구</small></td>
+                <td><strong>3정거장 (6분)</strong><br/>240엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>🌆 하루카스 300 전망대<br/>덴노지 공원</strong></td>
+                <td>지하철 <strong>우메다역 (M16)</strong></td>
+                <td><span class="sign-pill-red">M 미도스지선 (빨간색)</span><br/><small>덴노지·나카모즈 방면</small></td>
+                <td><strong>덴노지역 (M23)</strong><br/><small>역과 백화점·전망대 직결</small></td>
+                <td><strong>7정거장 (15분)</strong><br/>290엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>🗼 신세카이 · 쓰텐카쿠</strong></td>
+                <td>지하철 <strong>우메다역 (M16)</strong><br/><small>(또는 오기마치역 K12)</small></td>
+                <td><span class="sign-pill-red">M 미도스지선 (빨간색)</span><br/><small>(또는 갈색 사카이스지선 K)</small></td>
+                <td><strong>도부쓰엔마에역 (M22)</strong> 1번 출구<br/><small>(또는 에비스초역 K18 3번 출구)</small></td>
+                <td><strong>6정거장 (13분)</strong><br/>240엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>🍣 구로몬 시장</strong></td>
+                <td>지하철 <strong>오기마치역 (K12)</strong><br/><small>(또는 우메다역 M16 ➔ 난바역)</small></td>
+                <td><span class="sign-pill">K 사카이스지선 (갈색)</span><br/><small>덴가차야 방면</small></td>
+                <td><strong>닛폰바시역 (K17)</strong><br/><small>10번 출구 바로 앞</small></td>
+                <td><strong>5정거장 (10분)</strong><br/>240엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>🎡 가이유칸 (해유관)<br/>덴포잔 대관람차</strong></td>
+                <td>지하철 <strong>우메다역 (M16)</strong></td>
+                <td><span class="sign-pill-red">M 미도스지선</span> ➔ <strong>혼마치역(M18)</strong>에서<br/><span class="sign-pill" style="background:#009a66;color:#fff;">C 주오선 (초록색)</span> 환승</td>
+                <td><strong>오사카코역 (C11)</strong><br/><small>1번 출구 도보 5분</small></td>
+                <td><strong>약 22분 (환승 1회)</strong><br/>290엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>👘 오사카 주택박물관<br/>덴진바시스지 상점가</strong></td>
+                <td>지하철 <strong>히가시우메다역 (T20)</strong><br/><small>(또는 도보 12분)</small></td>
+                <td><span class="sign-pill-hankyu">T 다니마치선 (보라색)</span><br/><small>다이나이치 방면(2번 홈)</small></td>
+                <td><strong>덴진바시스지6초메역 (T18)</strong><br/><small>3번 출구 건물 8층 직결</small></td>
+                <td><strong>2정거장 (4분)</strong><br/>190엔 (ICOCA)</td>
+              </tr>
+              <tr class="best-row">
+                <td><strong>⛩️ 교토 시내 · 청수사<br/>기온거리 · 아라시야마</strong></td>
+                <td><strong>한큐 오사카우메다역 (HK01)</strong><br/><small>3층 개찰구 1·2·3번 홈</small></td>
+                <td><span class="sign-pill-hankyu">HK 한큐 교토선 『특급(特急)』</span></td>
+                <td><strong>교토 가와라마치역 (HK86)</strong><br/><small>(아라시야마는 가쓰라역 환승)</small></td>
+                <td><strong>43분</strong><br/>410엔 (ICOCA)</td>
+              </tr>
+              <tr>
+                <td><strong>✈️ 간사이국제공항 (KIX)</strong></td>
+                <td><strong>한큐 삼번가 고속버스터미널</strong><br/>또는 <strong>JR 오사카역</strong></td>
+                <td><strong>공항 리무진버스</strong> /<br/><span class="sign-pill-blue">JR 특급 하루카(지하 21번 홈)</span> /<br/><span class="sign-pill-blue">JR 간쿠쾌속(지상 1번 홈 1~4호차)</span></td>
+                <td><strong>간사이공항 제1·2터미널</strong></td>
+                <td><strong>47~65분</strong><br/>1,180~1,900엔</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 3: 공식 한글 노선도 1 - 오사카 지하철(Osaka Metro) 전체 노선도 -->
+      <div id="map-metro" class="section-card">
+        <div class="section-title">🚇 3. [공식 한글] 오사카 지하철 (Osaka Metro) 전체 노선도</div>
+        <div class="good-box" style="margin-top:0;">
+          <strong>💡 노선도 크게 보는 법:</strong> 아래 <strong>『➕ 1.8배 확대』</strong> 또는 <strong>『➕➕ 2.8배 크게 확대』</strong> 버튼을 누른 뒤 손가락으로 상하좌우로 밀어 보시거나, <strong>『🖼️ 새 창에서 원본 열기』</strong>를 누르면 스마트폰 두 손가락으로 마음껏 확대해서 보실 수 있습니다!
+        </div>
+
+        <div class="map-viewer-card" data-zoom="1">
+          <div class="map-toolbar">
+            <div class="map-zoom-group">
+              <button type="button" class="map-btn active" onclick="setMapZoom(this, 1)">🔍 기본(100%)</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 1.8)">➕ 1.8배 확대</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 2.8)">➕➕ 2.8배 크게</button>
+            </div>
+            <div class="map-pan-group">
+              <button type="button" class="map-pan-btn" onclick="panMap(this, -240, 0)">◀ 왼쪽</button>
+              <button type="button" class="map-pan-btn" onclick="panMap(this, 240, 0)">오른쪽 ▶</button>
+              <a class="map-open-btn" href="images/map_osaka_metro_ko.png" target="_blank" rel="noopener">🖼️ 새 창에서 원본 열기</a>
+            </div>
+          </div>
+          <div class="map-canvas-scroll">
+            <img class="map-zoom-img" src="images/map_osaka_metro_ko.png" alt="오사카 지하철(Osaka Metro) 한국어 전체 노선도" />
+          </div>
+          <div class="map-caption">
+            ▲ 오사카 메트로(지하철 9개 노선) + 한큐 교토선(우메다~교토 가와라마치·아라시야마) 공식 한국어 노선도 (중앙 왼쪽 빨간색 <strong>『우메다』</strong>와 보라색 <strong>『히가시우메다』</strong>가 부모님 숙소 위치입니다)
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: 공식 한글 노선도 2 - 오사카 시내 통합 노선도 (지하철 + JR + 사철) -->
+      <div id="map-osaka-all" class="section-card">
+        <div class="section-title">🚆 4. [공식 한글] 오사카 시내 통합 노선도 (지하철 + JR순환선 + 한큐·난카이·긴테쓰)</div>
+        <p style="margin-bottom: 12px; font-size: calc(17px * var(--font-scale)); color:#334155;">
+          오사카 지하철뿐만 아니라 <strong>JR 오사카 순환선(하늘색 실선)</strong>, <strong>유니버설시티역(66번)</strong>, <strong>오사카성(40번)</strong>, <strong>한큐·한신·난카이·긴테쓰·게이한</strong> 환승역까지 한 장에 모두 표시된 한국어 통합 노선도입니다.
+        </p>
+
+        <div class="map-viewer-card" data-zoom="1">
+          <div class="map-toolbar">
+            <div class="map-zoom-group">
+              <button type="button" class="map-btn active" onclick="setMapZoom(this, 1)">🔍 기본(100%)</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 1.8)">➕ 1.8배 확대</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 2.8)">➕➕ 2.8배 크게</button>
+            </div>
+            <div class="map-pan-group">
+              <button type="button" class="map-pan-btn" onclick="panMap(this, -240, 0)">◀ 왼쪽</button>
+              <button type="button" class="map-pan-btn" onclick="panMap(this, 240, 0)">오른쪽 ▶</button>
+              <a class="map-open-btn" href="images/map_jr_osaka_kr.jpg" target="_blank" rel="noopener">🖼️ 원본 이미지 열기</a>
+              <a class="map-open-btn pdf" href="images/map_jr_osaka_kr.pdf" target="_blank" rel="noopener">📄 공식 PDF 열기</a>
+            </div>
+          </div>
+          <div class="map-canvas-scroll">
+            <img class="map-zoom-img" src="images/map_jr_osaka_kr.jpg" alt="오사카 시내 통합 한국어 노선도 (지하철+JR+사철)" />
+          </div>
+          <div class="map-caption">
+            ▲ 오사카 시내 전체 철도 통합 한국어 노선도 (빨간 테두리로 표시된 <strong>신오사카 · 오사카/우메다 · 난바 · 덴노지</strong> 4대 거점역을 중심으로 보시면 한눈에 들어옵니다)
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: 공식 한글 노선도 3 - JR 서일본 노선도 -->
+      <div id="map-jr" class="section-card">
+        <div class="section-title">🚅 5. [공식 한글] JR 서일본 광역 노선도 (간사이공항 · 오사카 · 교토 · 고베 · 나라)</div>
+        <p style="margin-bottom: 12px; font-size: calc(17px * var(--font-scale)); color:#334155;">
+          <strong>JR 특급 하루카 · 간쿠쾌속 · JR 교토선 신쾌속 · 오사카 순환선</strong>을 타실 때 보는 JR 공식 한국어 노선도입니다. 아래쪽 파란색 <strong>『S 간사이공항』</strong>에서 중앙의 <strong>『오사카』</strong>, 오른쪽 위의 <strong>『교토』</strong>까지 이어지는 흐름을 확인하세요.
+        </p>
+
+        <div class="map-viewer-card" data-zoom="1">
+          <div class="map-toolbar">
+            <div class="map-zoom-group">
+              <button type="button" class="map-btn active" onclick="setMapZoom(this, 1)">🔍 기본(100%)</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 1.8)">➕ 1.8배 확대</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 2.8)">➕➕ 2.8배 크게</button>
+            </div>
+            <div class="map-pan-group">
+              <button type="button" class="map-pan-btn" onclick="panMap(this, -240, 0)">◀ 왼쪽</button>
+              <button type="button" class="map-pan-btn" onclick="panMap(this, 240, 0)">오른쪽 ▶</button>
+              <a class="map-open-btn" href="images/map_jr_west_kr.jpg" target="_blank" rel="noopener">🖼️ 원본 이미지 열기</a>
+              <a class="map-open-btn pdf" href="images/map_jr_west_kr.pdf" target="_blank" rel="noopener">📄 공식 PDF 열기</a>
+            </div>
+          </div>
+          <div class="map-canvas-scroll">
+            <img class="map-zoom-img" src="images/map_jr_west_kr.jpg" alt="JR 서일본 공식 한국어 노선도" />
+          </div>
+          <div class="map-caption">
+            ▲ JR 서일본(JR-WEST) 한국어 공식 노선도 (2026년 최신판 · 노선 기호 <strong>A 교토/고베선, O 오사카순환선, P 유니버설시티, S 간사이공항선, R 한와선</strong>)
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 6: 공식 한글 노선도 4 - 간사이 전체 통합 노선도 -->
+      <div id="map-kansai" class="section-card">
+        <div class="section-title">🗺️ 6. [공식 한글] 간사이 지역 전체 광역 노선도 (오사카 · 교토 · 고베 · 나라 전 노선)</div>
+        <p style="margin-bottom: 12px; font-size: calc(17px * var(--font-scale)); color:#334155;">
+          오사카를 중심으로 <strong>교토(청수사·아라시야마·후시미이나리), 고베(산노미야·아리마온천), 나라(사슴공원), 간사이공항</strong>까지 간사이 지방의 모든 기차·사철·지하철을 총망라한 대축척 한국어 노선도입니다.
+        </p>
+
+        <div class="map-viewer-card" data-zoom="1">
+          <div class="map-toolbar">
+            <div class="map-zoom-group">
+              <button type="button" class="map-btn active" onclick="setMapZoom(this, 1)">🔍 기본(100%)</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 1.8)">➕ 1.8배 확대</button>
+              <button type="button" class="map-btn" onclick="setMapZoom(this, 2.8)">➕➕ 2.8배 크게</button>
+            </div>
+            <div class="map-pan-group">
+              <button type="button" class="map-pan-btn" onclick="panMap(this, -240, 0)">◀ 왼쪽</button>
+              <button type="button" class="map-pan-btn" onclick="panMap(this, 240, 0)">오른쪽 ▶</button>
+              <a class="map-open-btn" href="images/map_jr_kansai_kr.jpg" target="_blank" rel="noopener">🖼️ 원본 이미지 열기</a>
+              <a class="map-open-btn pdf" href="images/map_jr_kansai_kr.pdf" target="_blank" rel="noopener">📄 공식 PDF 열기</a>
+            </div>
+          </div>
+          <div class="map-canvas-scroll">
+            <img class="map-zoom-img" src="images/map_jr_kansai_kr.jpg" alt="간사이 광역 전체 철도 한국어 노선도" />
+          </div>
+          <div class="map-caption">
+            ▲ 간사이 인바운드 유객연락회 공식 한국어 광역 철도 노선도 (왼쪽 아래 간사이국제공항 제1터미널 도착로비 안내도 포함)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-switch-wrap" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+      <button type="button" class="bottom-switch-btn to-kix" onclick="switchTab('kix', true)">
+        <div>
+          ✈️ 1편: 간사이공항 ➔ 우메다 가이드
+          <span class="sub">리무진버스 · 하루카 · 간쿠쾌속 · 호텔 길찾기</span>
+        </div>
+        <span style="font-size:24px;">➔</span>
+      </button>
+      <button type="button" class="bottom-switch-btn to-kyoto" onclick="switchTab('kyoto', true)">
+        <div>
+          ⛩️ 2편: 우메다 ⇄ 교토·청수사 가이드
+          <span class="sub">한큐특급 · JR신쾌속 · 청수사 · 우메다 복귀</span>
+        </div>
+        <span style="font-size:24px;">➔</span>
+      </button>
     </div>
   </div>
 
@@ -2573,19 +3278,28 @@
 
   <script>
     function switchTab(tab, scrollToTop) {
+      if (tab !== "kix" && tab !== "kyoto" && tab !== "map") tab = "kix";
       var isKix = (tab === "kix");
+      var isKyoto = (tab === "kyoto");
+      var isMap = (tab === "map");
+
       document.getElementById("tab-kix").classList.toggle("active", isKix);
-      document.getElementById("tab-kyoto").classList.toggle("active", !isKix);
+      document.getElementById("tab-kyoto").classList.toggle("active", isKyoto);
+      document.getElementById("tab-map").classList.toggle("active", isMap);
 
       var btnKix = document.getElementById("btn-tab-kix");
       var btnKyoto = document.getElementById("btn-tab-kyoto");
+      var btnMap = document.getElementById("btn-tab-map");
       btnKix.className = "tab-btn" + (isKix ? " active-kix" : "");
-      btnKyoto.className = "tab-btn" + (!isKix ? " active-kyoto" : "");
+      btnKyoto.className = "tab-btn" + (isKyoto ? " active-kyoto" : "");
+      btnMap.className = "tab-btn" + (isMap ? " active-map" : "");
       btnKix.setAttribute("aria-selected", isKix ? "true" : "false");
-      btnKyoto.setAttribute("aria-selected", !isKix ? "true" : "false");
+      btnKyoto.setAttribute("aria-selected", isKyoto ? "true" : "false");
+      btnMap.setAttribute("aria-selected", isMap ? "true" : "false");
 
       document.getElementById("subnav-kix").style.display = isKix ? "block" : "none";
-      document.getElementById("subnav-kyoto").style.display = !isKix ? "block" : "none";
+      document.getElementById("subnav-kyoto").style.display = isKyoto ? "block" : "none";
+      document.getElementById("subnav-map").style.display = isMap ? "block" : "none";
 
       try { localStorage.setItem("parents_osaka_active_tab", tab); } catch (e) {}
       if (history.replaceState) {
@@ -2593,6 +3307,35 @@
       }
       if (scrollToTop !== false) {
         window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function setMapZoom(btn, factor) {
+      var card = btn.closest(".map-viewer-card");
+      if (!card) return;
+      var img = card.querySelector(".map-zoom-img");
+      var scrollBox = card.querySelector(".map-canvas-scroll");
+      if (img) {
+        img.style.maxWidth = (factor > 1) ? "none" : "100%";
+        img.style.width = (factor * 100) + "%";
+      }
+      var btns = card.querySelectorAll(".map-zoom-group .map-btn");
+      btns.forEach(function(b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      if (scrollBox && factor > 1) {
+        setTimeout(function() {
+          scrollBox.scrollLeft = (scrollBox.scrollWidth - scrollBox.clientWidth) * 0.35;
+          scrollBox.scrollTop = (scrollBox.scrollHeight - scrollBox.clientHeight) * 0.28;
+        }, 60);
+      }
+    }
+
+    function panMap(btn, dx, dy) {
+      var card = btn.closest(".map-viewer-card");
+      if (!card) return;
+      var scrollBox = card.querySelector(".map-canvas-scroll");
+      if (scrollBox) {
+        scrollBox.scrollBy({ left: dx, top: dy, behavior: "smooth" });
       }
     }
 
@@ -2614,14 +3357,14 @@
 
     // Photo tap-to-zoom lightbox
     document.addEventListener("click", function(e) {
-      var img = e.target.closest("#tab-kix .photos img, #tab-kyoto .photo-card img");
+      var img = e.target.closest("#tab-kix .photos img, #tab-kyoto .photo-card img, #tab-map .map-zoom-img");
       if (!img) return;
       var lb = document.getElementById("lightbox");
       var lbImg = document.getElementById("lightbox-img");
       var lbCap = document.getElementById("lightbox-caption");
       lbImg.src = img.src;
-      var capEl = img.parentElement.querySelector("figcaption, .photo-caption");
-      lbCap.textContent = capEl ? capEl.textContent : (img.alt || "");
+      var capEl = img.parentElement.querySelector("figcaption, .photo-caption") || img.closest(".map-viewer-card")?.querySelector(".map-caption");
+      lbCap.textContent = capEl ? capEl.textContent.trim() : (img.alt || "");
       lb.classList.add("open");
     });
 
@@ -2634,12 +3377,14 @@
       var hash = (window.location.hash || "").replace("#", "");
       if (hash === "kyoto" || hash.indexOf("kyoto-") === 0) {
         switchTab("kyoto", false);
+      } else if (hash === "map" || hash.indexOf("map-") === 0) {
+        switchTab("map", false);
       } else if (hash === "kix" || hash.indexOf("kix-") === 0) {
         switchTab("kix", false);
       } else {
         try {
           var saved = localStorage.getItem("parents_osaka_active_tab");
-          if (saved === "kyoto") switchTab("kyoto", false);
+          if (saved === "kyoto" || saved === "map") switchTab(saved, false);
         } catch (e) {}
       }
     });
