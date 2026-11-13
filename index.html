@@ -51,7 +51,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+    html { scroll-behavior: smooth; max-width: 100%; }
     body {
       margin: 0;
       padding: 0;
@@ -62,7 +62,7 @@
       line-height: 1.7;
       word-break: keep-all;
       -webkit-text-size-adjust: 100%;
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100%;
     }
     a { color: inherit; }
@@ -195,11 +195,12 @@
     }
     .sub-nav-bar::-webkit-scrollbar { display: none; }
     .sub-nav-inner {
-      width: max-content;
+      max-width: 980px;
       margin: 0 auto;
       display: flex;
-      gap: 7px;
-      white-space: nowrap;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
     }
     .sub-chip {
       display: inline-flex;
@@ -237,7 +238,7 @@
 
     /* Scroll margin for sticky header */
     [id^="kix-"], [id^="kyoto-"] {
-      scroll-margin-top: 175px;
+      scroll-margin-top: 115px;
     }
 
     /* Mobile Table Horizontal Scroll */
@@ -380,8 +381,7 @@
     #tab-kix .jump .dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 7px; vertical-align: middle; }
     #tab-kix section { margin: -45px auto 36px; position: relative; z-index: 2; }
     #tab-kix .panel {
-      max-width: 100%;
-      overflow: hidden; background: var(--card); border-radius: 24px; box-shadow: var(--shadow); padding: 28px; }
+      max-width: 100%; background: var(--card); border-radius: 24px; box-shadow: var(--shadow); padding: 28px; }
     #tab-kix h2 { font-family: "Noto Serif KR", serif; font-size: calc(27px * var(--font-scale)); margin: 0 0 6px; }
     #tab-kix .lead { color: var(--sub); margin: 0 0 18px; font-size: calc(17px * var(--font-scale)); }
     #tab-kix table { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; font-size: calc(16.5px * var(--font-scale)); }
@@ -510,7 +510,6 @@
     }
     #tab-kyoto .section-card {
       max-width: 100%;
-      overflow: hidden;
       background: #ffffff;
       border-radius: 20px;
       padding: 24px 20px;
@@ -738,6 +737,22 @@
       color: #e2e8f0;
     }
 
+    
+    #tab-kix .photos.fork-photos {
+      grid-template-columns: 280px 1fr;
+    }
+    #tab-kix .note a, #tab-kyoto .tip-box a, a[href^="http"] {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
+    #tab-kyoto .phrase-box, #tab-kyoto .phrase-box * {
+      word-break: break-all !important;
+      overflow-wrap: anywhere !important;
+    }
+    .mobile-table-wrap, .mobile-table-wrap table, .mobile-table-wrap th, .mobile-table-wrap td {
+      touch-action: pan-x pan-y;
+    }
+    
     /* ================= LIGHTBOX & FLOATING TOP BUTTON ================= */
     .lightbox-overlay {
       position: fixed;
@@ -814,14 +829,15 @@
       #tab-kix .hero h1 { font-size: calc(27px * var(--font-scale)); }
       #tab-kix .jump { display: none; }
       #tab-kix .panel {
-      max-width: 100%;
-      overflow: hidden; padding: 18px 14px; border-radius: 18px; }
+      max-width: 100%; padding: 18px 14px; border-radius: 18px; }
       #tab-kix .rec-grid, #tab-kix .two-col, #tab-kix .yt-grid { grid-template-columns: 1fr; }
       #tab-kix .sec-head { padding: 20px 18px; border-radius: 18px; }
       #tab-kix .sec-head h2 { font-size: calc(23px * var(--font-scale)); }
       #tab-kix .step-top { padding: 16px 16px 8px; flex-direction: column; gap: 8px; }
       #tab-kix .step-badge { height: 38px; font-size: 16px; border-radius: 10px; }
-      #tab-kix .photos { padding: 8px 16px; grid-template-columns: 1fr; }
+      #tab-kix .photos, #tab-kix .photos.fork-photos { padding: 8px 16px; grid-template-columns: 1fr !important; }
+      .sub-nav-bar { padding: 6px 8px; overflow-x: visible; }
+      .sub-chip { font-size: 13px; padding: 5px 10px; }
       #tab-kix .photos img { height: 215px; }
       #tab-kix .step-body { padding: 6px 16px 18px; }
 
@@ -830,8 +846,7 @@
       #tab-kyoto .hero h1 { font-size: calc(25px * var(--font-scale)); }
       #tab-kyoto .quick-nav { display: none; }
       #tab-kyoto .section-card {
-      max-width: 100%;
-      overflow: hidden; padding: 18px 14px; border-radius: 18px; }
+      max-width: 100%; padding: 18px 14px; border-radius: 18px; }
       #tab-kyoto .step-block { padding: 16px 14px; border-radius: 15px; }
       #tab-kyoto .step-header { flex-direction: column; gap: 8px; }
       #tab-kyoto .photo-grid { grid-template-columns: 1fr; }
@@ -866,8 +881,10 @@
         <span class="tab-sub-title">한큐특급 · JR신쾌속 · 청수사 · 복귀</span>
       </button>
     </div>
+  </div>
+  <div class="sub-nav-container">
 
-    <!-- Quick Sub-navigation for Tab 1 (KIX) -->
+  <!-- Quick Sub-navigation for Tab 1 (KIX) -->
     <div id="subnav-kix" class="sub-nav-bar">
       <div class="sub-nav-inner">
         <a class="sub-chip" href="#kix-compare">📊 3가지 비교</a>
@@ -1099,7 +1116,7 @@
         <div class="step-sub">버스와 기차(전철)는 타는 층이 다릅니다.</div>
       </div>
     </div>
-    <div class="photos" style="grid-template-columns:280px 1fr">
+    <div class="photos fork-photos">
       <figure><img src="여행/오사카/images/kix_bus1_sign.jpg" alt="1층 로비 버스/전철 표지판"><figcaption>1층 출구 앞 파란 안내판</figcaption></figure>
       <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;padding:6px 4px">
         <div class="mini-box g">
